@@ -115,19 +115,19 @@ $FORMS['view_block'] = <<<END
     <div class="product__slider-navlist js-product-slider-nav">
         
             <div class="product__slider-navitem">
-                <img src="%data getProperty(%id%, 'izobrazhenie_1', 'izobrazhenie')%" alt="img01">
+                <img src="%data getProperty(%id%, 'izobrazhenie_1', 'izobrazhenie')%" alt="">
             </div>
             
             <div class="product__slider-navitem">
-                <img src="%data getProperty(%id%, 'izobrazhenie_2', 'izobrazhenie')%" alt="img01">
+                <img src="%data getProperty(%id%, 'izobrazhenie_2', 'izobrazhenie')%" alt="">
             </div>
             
             <div class="product__slider-navitem">
-                <img src="%data getProperty(%id%, 'izobrazhenie_3', 'izobrazhenie')%" alt="img01">
+                <img src="%data getProperty(%id%, 'izobrazhenie_3', 'izobrazhenie')%" alt="">
             </div>
         
             <div class="product__slider-navitem">
-                <img src="%data getProperty(%id%, 'izobrazhenie_4', 'izobrazhenie')%" alt="img01">
+                <img src="%data getProperty(%id%, 'izobrazhenie_4', 'izobrazhenie')%" alt="">
             </div>
         
     </div>
@@ -141,38 +141,38 @@ $FORMS['view_block'] = <<<END
    <div class="product__col">
       <div class="product__prev">
          <div class="product__prev-nav">
-            <span class="product__prev-art">Артикул: 140211-959-3899</span>
+            <span class="product__prev-art">%data getProperty(%id%, 'sku')%</span>
             <div class="product__color">
                <span class="product__title">Цветовая схема</span>
                <ul class="product__color-list">
                   <li class="product__color-item">
                      <a href="#" class="product__color-link active">
-                     <img src="/pic/product-color/img01.jpg" alt="img01">
+                     <img src="/pic/product-color/img01.jpg" alt="">
                      </a>
                   </li>
                   <li class="product__color-item">
                      <a href="#" class="product__color-link ">
-                     <img src="/pic/product-color/img02.jpg" alt="img02">
+                     <img src="/pic/product-color/img02.jpg" alt="">
                      </a>
                   </li>
                   <li class="product__color-item">
                      <a href="#" class="product__color-link ">
-                     <img src="/pic/product-color/img03.jpg" alt="img03">
+                     <img src="/pic/product-color/img03.jpg" alt="">
                      </a>
                   </li>
                   <li class="product__color-item">
                      <a href="#" class="product__color-link ">
-                     <img src="/pic/product-color/img04.jpg" alt="img04">
+                     <img src="/pic/product-color/img04.jpg" alt="">
                      </a>
                   </li>
                   <li class="product__color-item">
                      <a href="#" class="product__color-link ">
-                     <img src="/pic/product-color/img05.jpg" alt="img05">
+                     <img src="/pic/product-color/img05.jpg" alt="">
                      </a>
                   </li>
                   <li class="product__color-item">
                      <a href="#" class="product__color-link ">
-                     <img src="/pic/product-color/img06.jpg" alt="img06">
+                     <img src="/pic/product-color/img06.jpg" alt="">
                      </a>
                   </li>
                </ul>

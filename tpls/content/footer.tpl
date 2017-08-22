@@ -167,7 +167,7 @@
         <li class="social__item">
             <a href="#" class="social__link social__link--white">
                 <svg class="social__icon social__icon--white social__icon--youtube">
-                <use xlink:href="#youtube"></use>
+                    <use xlink:href="#youtube"></use>
                 </svg>
             </a>
         </li>

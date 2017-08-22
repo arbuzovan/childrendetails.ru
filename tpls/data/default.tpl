@@ -41,8 +41,7 @@ END;
 
 
 $FORMS['string'] = <<<END
-[String], %title% (%name%): %value%
-
+%title%: %value%
 END;
 
 $FORMS['text'] = <<<END
