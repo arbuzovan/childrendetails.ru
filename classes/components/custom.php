@@ -202,6 +202,72 @@
                     }
                     
                     $value = umiObjectsCollection::getInstance()->getObject($settingsId)->getValue($paramName);
+                    
+                    if(empty($value)){
+                        return false;
+                    }
+                    
                     return $value;
+                }
+                
+                public function getSiteSocialsNeworkSetting($settingName = false, $groupName = false, $template = 'social_networks'){
+                    if(!$settingName || empty($settingName)){
+                        return false;
+                    }
+                    
+                    if(!$groupName || empty($groupName)){
+                        return false;
+                    }
+                    
+                    $mSettings = cmsController::getInstance()->getModule("umiSettings");
+                    $settingsId = $mSettings->getId($settingName);
+                    
+                    if(!$settingsId || empty($settingsId)){
+                        throw new publicException("Ощибка получения настроек");
+                    }
+                    
+                    $aIds = umiObjectsCollection::getInstance()->getObject($settingsId)->getPropGroupByName($groupName);
+
+                    if($aIds == false || empty($aIds)){
+                        return false;
+                    }
+                    
+                    
+                    
+                    if (!$template) {
+                        $template = "social_networks";
+                    }
+
+                    
+                    
+                    list($template_block,$template_line) = def_module::loadTemplates("data/reflection/".$template, "sc_networks_block","sc_networks_item");
+                    $block_arr = array();
+                    $lines = array();
+                    
+                    
+                    foreach ($aIds as $socialNetworkId){
+                        
+                        $scFldObject = umiFieldsCollection::getInstance()->getField($socialNetworkId);
+                        
+                        $fldName = $scFldObject->getName();
+                        $settingValue = $this->getSiteSetting($settingName, $scFldObject->getName());
+                        
+                        if(empty($settingValue)){
+                            continue;
+                        }
+                        
+                        $line_arr = Array();
+                        $line_arr['attribute:id'] = $socialNetworkId;
+                        $line_arr['attribute:name'] = $fldName;
+                        $line_arr['attribute:title'] = $scFldObject->getTitle();
+                        
+                        $line_arr['attribute:value'] = $this->getSiteSetting($settingName, $scFldObject->getName());
+
+                        $lines[] = def_module::parseTemplate($template_line, $line_arr, $socialNetworkId);
+                    }
+                    
+                    $block_arr['subnodes:items']  = $lines;
+                    return def_module::parseTemplate($template_block, $block_arr);
+
                 }
 	}
