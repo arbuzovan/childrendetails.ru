@@ -33,11 +33,12 @@
 <div class="header__top-right">
     <div class="header__top-row">
         <div class="header__top-tel">
-            <a href="tel:+79062355689" class="header__top-link">
+            <a href="tel:%custom getSiteSetting('Шапка','phone_1')%" class="header__top-link">
                 <svg class="header__top-icon">
                     <use xlink:href="#phone"></use>
                 </svg>
-                <span class="header__tel">7 906 235 56 89</span>
+                <span class="header__tel">
+                    %custom getSiteSetting('Шапка','phone_1')%</span>
             </a>
         </div>
         <div class="header__top-user">
@@ -76,37 +77,7 @@
 </form>
 </div>
 <div class="header__middle-right">
-<div class="header__social">
-    <div class="social">
-        <ul class="social__list">
-
-            <li class="social__item">
-                <a href="#" class="social__link social__link--grey">
-                    <svg class="social__icon social__icon--grey social__icon--facebook">
-                    <use xlink:href="#facebook"></use>
-                    </svg>
-                </a>
-            </li>
-
-            <li class="social__item">
-                <a href="#" class="social__link social__link--grey">
-                    <svg class="social__icon social__icon--grey social__icon--vk">
-                    <use xlink:href="#vk"></use>
-                    </svg>
-                </a>
-            </li>
-
-            <li class="social__item">
-                <a href="#" class="social__link social__link--grey">
-                    <svg class="social__icon social__icon--grey social__icon--instagram">
-                        <use xlink:href="#instagram"></use>
-                    </svg>
-                </a>
-            </li>
-
-        </ul>
-    </div>
-</div>
+    %custom getSiteSocialsNeworkSetting('Шапка','socials_net','social_networks_header')%
 <div class="header__cart">
     <a href="/emarket/cart/" class="btn btn-cart">
         <svg class="btn-cart-icon">

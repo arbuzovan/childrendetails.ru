@@ -14,43 +14,26 @@
     <div class="contact-info__list">
         <div class="contact-info__item">
             <span class="contact-info__title">Позвоните нам:</span>
-            <a href="tel:+79062355689" class="contact-info__tel">7 906 235 56 89</a>
+            <a href="tel:%custom getSiteSetting('Шапка','phone_1')%" class="contact-info__tel">%custom getSiteSetting('Шапка','phone_1')%</a>
         </div>
         <div class="contact-info__item">
             <span class="contact-info__title">Мы в соц сетях:</span>
              <div class="social">
     <ul class="social__list">
-        
-            <!-- <li class="social__item">
-    <a href="#" class="social__link social__link--black">
-        <svg class="social__icon social__icon--black social__icon--facebook">
-            <use xlink:href="#facebook"></use>
-        </svg>
-    </a>
-</li>
-        
             <li class="social__item">
-    <a href="#" class="social__link social__link--black">
-        <svg class="social__icon social__icon--black social__icon--vk">
-            <use xlink:href="#vk"></use>
-        </svg>
-    </a>
-</li> -->
-        
-            <li class="social__item">
-    <a href="https://www.instagram.com/childrendetails/" class="social__link social__link--black">
-        <svg class="social__icon social__icon--black social__icon--instagram">
-            <use xlink:href="#instagram"></use>
-        </svg>
-    </a>
-</li>
+                <a href="%custom getSiteSetting('Шапка','instagram')%" class="social__link social__link--black">
+                    <svg class="social__icon social__icon--black social__icon--instagram">
+                        <use xlink:href="#instagram"></use>
+                    </svg>
+                </a>
+            </li>
         
     </ul>
 </div>
         </div>
         <div class="contact-info__item">
             <span class="contact-info__title">Напишите нам:</span>
-            <a href="mailto:&#105;&#110;&#102;&#111;&#064;&#099;&#104;&#105;&#108;&#100;&#114;&#101;&#110;&#100;&#101;&#116;&#097;&#105;&#108;&#115;&#046;&#114;&#117;" class="contact-info__mail">&#105;&#110;&#102;&#111;&#064;&#099;&#104;&#105;&#108;&#100;&#114;&#101;&#110;&#100;&#101;&#116;&#097;&#105;&#108;&#115;&#046;&#114;&#117;</a>
+            <a href="mailto:%custom getSiteSetting('Шапка','email_1')%" class="contact-info__mail">%custom getSiteSetting('Шапка','email_1')%</a>
         </div>
     </div>
 </div>

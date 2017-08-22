@@ -3,7 +3,7 @@
         
             <span class="title"><span class="title__pos">Возникли вопросы?</span></span>
             <span class="popup__info">Мы перезвоним вам в ближайшее время</span>
-            <span class="popup__subinfo">График работы понедельник - пятница с 09:00 - 18:00</span>
+            <span class="popup__subinfo">График работы %custom getSiteSetting('Шапка','worktime')%</span>
             <div class="popup__form">
                 <form action="" class="form">
                     <div class="form__item">
@@ -137,43 +137,7 @@
 </div>
 <div class="footer__right">
 <div class="footer__social">
-<div class="social">
-    <ul class="social__list">
-
-        <li class="social__item">
-            <a href="#" class="social__link social__link--white">
-                <svg class="social__icon social__icon--white social__icon--facebook">
-                <use xlink:href="#facebook"></use>
-                </svg>
-            </a>
-        </li>
-
-        <li class="social__item">
-            <a href="#" class="social__link social__link--white">
-                <svg class="social__icon social__icon--white social__icon--vk">
-                <use xlink:href="#vk"></use>
-                </svg>
-            </a>
-        </li>
-
-        <li class="social__item">
-            <a href="#" class="social__link social__link--white">
-                <svg class="social__icon social__icon--white social__icon--instagram">
-                <use xlink:href="#instagram"></use>
-                </svg>
-            </a>
-        </li>
-
-        <li class="social__item">
-            <a href="#" class="social__link social__link--white">
-                <svg class="social__icon social__icon--white social__icon--youtube">
-                    <use xlink:href="#youtube"></use>
-                </svg>
-            </a>
-        </li>
-
-    </ul>
-</div>
+    %custom getSiteSocialsNeworkSetting('Шапка','socials_net','social_networks')%
 </div>
 <div class="footer__button">
 <a href="#question" class="btn btn__transparent btn__transparent--white footer__btn js-popup">
