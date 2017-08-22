@@ -9,7 +9,7 @@
          </div>
       </div>
       <section class="info-text">
-         <h1 class="title info-text__title"><span class="title__pos">Товары для детей</span></h1>
+         <h1 class="title info-text__title"><span class="title__pos">%header%</span></h1>
          %descr%
       </section>
    </div>
