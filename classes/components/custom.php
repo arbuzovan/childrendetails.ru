@@ -13,21 +13,28 @@
                     if(!$template){
                         $template = "default";
                     }
-
+                    
                     $thumbs_path = CURRENT_WORKING_DIR."/images/.tmb/";
                     $path = CURRENT_WORKING_DIR.$path;
-
+                    
                     $image = new umiImageFile($path);
+                    
                     $file_name = $image->getFileName();
+                    
                     $file_ext = $image->getExt();
-                    $thumbPath = sha1($image->getDirName());
 
+                    $thumbPath = sha1($image->getDirName());
+                    
                     if (!is_dir($thumbs_path.$thumbPath)) {
                         mkdir($thumbs_path.$thumbPath, 0755);
                     }
 
                     $file_ext = strtolower($file_ext);
+                    
+                    
                     $allowedExts = Array('gif', 'jpeg', 'jpg', 'png', 'bmp');
+                    
+                    
                     if(!in_array($file_ext, $allowedExts)){
                         return "";
                     }
@@ -165,6 +172,7 @@
                     if(true == $returnArrayOnly) {
                         return $arr;
                     } else {
+                        
                         list($tpl) = def_module::loadTemplates("thumbs/{$template}.tpl", "image");
                         return def_module::parseTemplate($tpl, $arr);
                     }
