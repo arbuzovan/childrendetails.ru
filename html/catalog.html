@@ -1,0 +1,903 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Каталог</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="pic/favicon_16.jpg" sizes="16x16" type="image/x-icon">
+    <link rel="shortcut icon" href="pic/favicon_164.jpg" sizes="164x164" type="image/x-icon">
+    <!-- @endif -->
+</head>
+<body>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+    </div>  
+
+  
+<header class="header sticky-wrapper">
+    <div class="header__top">
+        <div class="container">
+            <div class="header__top-left">
+                
+<nav class="header__nav">
+	<div class="nav">
+        <ul class="nav__list">
+            <li class="nav__list-item"><a href="#" class="nav__link ">О нас</a></li>
+            <li class="nav__list-item"><a href="#" class="nav__link ">Акции</a></li>
+            <li class="nav__list-item"><a href="#" class="nav__link ">Контакты</a></li>
+            <li class="nav__list-item"><a href="#" class="nav__link ">Новости</a></li>
+            <li class="nav__list-item"><a href="#" class="nav__link ">Доставка</a></li>
+            <li class="nav__list-item"><a href="#" class="nav__link ">Оплата</a></li>
+        </ul>
+    </div>
+</nav>
+
+            </div>
+            <div class="header__top-right">
+                <div class="header__top-row">
+                    <div class="header__top-tel">
+                        <a href="tel:+79062146984" class="header__top-link">
+                            <svg class="header__top-icon">
+                                <use xlink:href="#phone"></use>
+                            </svg>
+                            <span class="header__tel">7 906 214 69 84</span>
+                        </a>
+                    </div>
+                    <div class="header__top-user">
+                        <ul class="header__user-list">
+                            <li class="header__user-item">
+                                <a href="#" class="header__user-link">Вход</a>
+                            </li>
+                            <li class="header__user-item">
+                                <a href="#" class="header__user-link">Регистрация</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header__middle">
+        <div class="container">
+            <div class="header__middle-holder">
+                <div class="header__middle-left">
+                    <a href="#" class="header__logo">
+                        <img src="pic/logo.png" alt="logo">
+                    </a>
+                </div>
+                <div class="header__search">
+                    <form action="" class="form form--search js-placeholder-container">
+                        <span class="form__search">
+                            <input type="text" class="input form__search-input js-search" placeholder="">
+                            <div class="placeholderDiv js-placeholderDiv">Введите интересующий товар. Например, <a href="#">рюкзак</a> или <a href="#">шапочка</a></div>
+                            <button type="submit" class="form__btn-icon">
+                                <svg class="form__icon">
+                                    <use xlink:href="#search"></use>
+                                </svg>
+                            </button>
+                        </span>
+                    </form>
+                </div>
+                <div class="header__middle-right">
+                    <div class="header__social">
+                        <div class="social">
+    <ul class="social__list">
+        
+            <li class="social__item">
+    <a href="#" class="social__link social__link--grey">
+        <svg class="social__icon social__icon--grey social__icon--facebook">
+            <use xlink:href="#facebook"></use>
+        </svg>
+    </a>
+</li>
+        
+            <li class="social__item">
+    <a href="#" class="social__link social__link--grey">
+        <svg class="social__icon social__icon--grey social__icon--vk">
+            <use xlink:href="#vk"></use>
+        </svg>
+    </a>
+</li>
+        
+            <li class="social__item">
+    <a href="#" class="social__link social__link--grey">
+        <svg class="social__icon social__icon--grey social__icon--instagram">
+            <use xlink:href="#instagram"></use>
+        </svg>
+    </a>
+</li>
+        
+    </ul>
+</div>
+                    </div>
+                    <div class="header__cart">
+                        <a href="#" class="btn btn-cart">
+    <svg class="btn-cart-icon">
+        <use xlink:href="#cart"></use>
+    </svg>
+    <span class="btn-cart-text">2 ТОВАРА</span>
+    <span class="btn-cart-price">16 000 руб</span>
+</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header__bottom js-sticky-header">
+        <div class="container">
+            <div class="header__bottom-left">
+                <a href="#" class="header__bottom-logo">
+                    <img src="pic/logo-small.png" alt="logo-small">
+                </a>
+            </div>
+            <div class="header__bottom-center">
+                
+<nav class="header__navigate">
+	<div class="navigate">
+        <ul class="navigate__list">
+            <li class="navigate__list-item js-dropdown">
+                <a href="#" class="navigate__link active">Малыши</a>
+                <div class="navigate__drop js-subnav">
+                    <ul class="navigate__sublist">
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Пустышки</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Держатели для пустышек</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Нагрудники</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Головные уборы</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Перчатки и варежки</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="navigate__list-item js-dropdown">
+                <a href="#" class="navigate__link ">Мальчики</a>
+                <div class="navigate__drop js-subnav">
+                    <ul class="navigate__sublist">
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Аксесуары</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Шапки</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Варежки</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="navigate__list-item js-dropdown">
+                <a href="#" class="navigate__link ">Девочки</a>
+                <div class="navigate__drop js-subnav">
+                    <ul class="navigate__sublist">
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Головные  уборы</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Варежки и перчатки</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="navigate__list-item js-dropdown">
+                <a href="#" class="navigate__link ">Сумки и рюкзаки</a>
+                <div class="navigate__drop js-subnav">
+                    <ul class="navigate__sublist">
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Детские рюкзаки</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Сумки для мам</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="navigate__list-item js-dropdown">
+                <a href="#" class="navigate__link ">Домашняя коллекция</a>
+                <div class="navigate__drop js-subnav">
+                    <ul class="navigate__sublist">
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Пледы</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Постельное белье</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Полотенце</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Корзины для белья</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Игровые коврики</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="navigate__list-item js-dropdown">
+                <a href="#" class="navigate__link ">Игрушки</a>
+                <div class="navigate__drop js-subnav">
+                    <ul class="navigate__sublist">
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Пустышки</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Держатели для пустышек</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Нагрудники</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Головные уборы</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Перчатки и варежки</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="navigate__list-item js-dropdown">
+                <a href="#" class="navigate__link ">Коляски и аксессуары</a>
+                <div class="navigate__drop js-subnav">
+                    <ul class="navigate__sublist">
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Коляски</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Вкладыши</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Конверты</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Дождевики</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Москитные сетки</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="navigate__list-item js-dropdown">
+                <a href="#" class="navigate__link ">Мебель для детских</a>
+                <div class="navigate__drop js-subnav">
+                    <ul class="navigate__sublist">
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Пустышки</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Держатели для пустышек</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Нагрудники</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Головные уборы</a>
+                        </li>
+                        <li class="navigate__subitem">
+                            <a href="#" class="navigate__sublink">Перчатки и варежки</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+            </div>
+            <div class="header__bottom-right">
+                 <a href="tel:+79062146984" class="header__bottom-link">7 906 214 69 84</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+    
+    <div class="wrapper">
+        <div class="container">
+           
+           <div class="breadcrumbs ">
+  <ul class="breadcrumbs__list">
+  	
+	    <li class="breadcrumbs__item">
+	      <a href="#" class="breadcrumbs__link">Главная</a>
+	    </li>
+    
+    <li class="breadcrumbs__item">
+      <span class="breadcrumbs__text">Каталог</span>
+    </li>
+  </ul>
+</div>
+           
+           <div class="catalog">
+    <div class="catalog__list js-grid">
+        <div class="catalog__sizer js-grid-sizer"></div>
+        <div class="catalog__item js-grid-item">
+            <div class="catalog__item-holder">
+    <a href="#" class="catalog__image catalog__image--large">
+        <img src="pic/catalog/img01.jpg" alt="img01">
+    </a>
+    <div class="catalog__info">
+        <a href="#" class="catalog__title">Малыши</a>
+        <ul class="catalog__info-list">
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Пустышки</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Держатели ждя пустышек</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Нагрудники</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Головные уборы</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Перчатки и варежки</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Перчатки и варежки</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Перчатки и варежки</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Головные уборы</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Перчатки и варежки</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Перчатки и варежки</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Перчатки и варежки</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Перчатки и варежки</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Перчатки и варежки</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Перчатки и варежки</a>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+        </div>
+        <div class="catalog__item js-grid-item">
+            <div class="catalog__item-holder">
+    <a href="#" class="catalog__image catalog__image--large">
+        <img src="pic/catalog/img02.jpg" alt="img02">
+    </a>
+    <div class="catalog__info">
+        <a href="#" class="catalog__title">Девочки</a>
+        <ul class="catalog__info-list">
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Головные уборв</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Варежки и перчатки</a>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+        </div>
+        <div class="catalog__item js-grid-item">
+            <div class="catalog__item-holder">
+    <a href="#" class="catalog__image catalog__image--large">
+        <img src="pic/catalog/img03.jpg" alt="img03">
+    </a>
+    <div class="catalog__info">
+        <a href="#" class="catalog__title">Домашняя коллекция</a>
+        <ul class="catalog__info-list">
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Домашняя коллекция</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Постельное белье</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Полотенца</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Корзины для белья</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Игровые коврики</a>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+        </div>
+        <div class="catalog__item js-grid-item">
+            <div class="catalog__item-holder">
+    <a href="#" class="catalog__image catalog__image--large">
+        <img src="pic/catalog/img04.jpg" alt="img04">
+    </a>
+    <div class="catalog__info">
+        <a href="#" class="catalog__title">Мальчики</a>
+        <ul class="catalog__info-list">
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Аксесуары</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Инструменты</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Запчасти</a>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+        </div>
+        <div class="catalog__item js-grid-item">
+            <div class="catalog__item-holder">
+    <a href="#" class="catalog__image catalog__image--small">
+        <img src="pic/catalog/img05.jpg" alt="img05">
+    </a>
+    <div class="catalog__info">
+        <a href="#" class="catalog__title">Сумки и рюкзаки</a>
+        <ul class="catalog__info-list">
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Детские рюкзаки</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Сумки для мам</a>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+        </div>
+        <div class="catalog__item js-grid-item">    
+            <div class="catalog__item-holder">
+    <a href="#" class="catalog__image catalog__image--large">
+        <img src="pic/catalog/img06.jpg" alt="img06">
+    </a>
+    <div class="catalog__info">
+        <a href="#" class="catalog__title">Коляски и аксессуары</a>
+        <ul class="catalog__info-list">
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Коляски</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Вкладыша</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Конверты</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Дождивеки</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Москитные сетки</a>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+        </div>
+        <div class="catalog__item js-grid-item">
+            <div class="catalog__item-holder">
+    <a href="#" class="catalog__image catalog__image--small">
+        <img src="pic/catalog/img07.jpg" alt="img07">
+    </a>
+    <div class="catalog__info">
+        <a href="#" class="catalog__title">Игрушки</a>
+        <ul class="catalog__info-list">
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Игрушки</a>
+                </li>
+            
+                <li class="catalog__info-item">
+                    <a href="#" class="catalog__info-link">Игрушки</a>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+    	    
+           <section class="info-text">
+     <h1 class="title info-text__title"><span class="title__pos">Товары для детей</span></h1>
+     
+         <p>Если вам нужна детская одежда интернет-магазин «Восход» готов предложить продукцию, которая способна превзойти ожидания. Мы говорим это не как производители, а как родители, поскольку видим в вас не клиентов, а самих себя – людей, желающих одеть дорогих чад в хорошие вещи.</p>
+     
+         <p>Все, на чем сосредоточено наше внимание, – это исключительно детская одежда купить которую можно в нашем магазине онлайн. Мы предлагаем родителям крох замечательные комбинезоны, веселые распашонки, удобные боди, комбинированные ползунки-штанишки, прелестные блузочки и многое другое. Коллекции детской одежды интернет-магазина постоянно обновляются в соответствии с модными тенденциями и разработками.</p>
+     
+</section>
+            
+        </div>
+    </div>
+
+  <div id="question" class="popup" style="display: none">
+    <div class="popup__wrapper popup__wrapper-question">
+        
+            <span class="title"><span class="title__pos">Возникли вопросы?</span></span>
+            <span class="popup__info">Мы перезвоним вам в ближайшее время</span>
+            <span class="popup__subinfo">График работы понедельник - пятница с 09:00 - 18:00</span>
+            <div class="popup__form">
+                <form action="" class="form">
+                    <div class="form__item">
+                        <input type="text" class="input form__input" placeholder="Ваше имя">
+                    </div>
+                    <div class="form__item">
+                        <input type="tel" class="input form__input" placeholder="Ваш телефон">
+                    </div>
+                    <div class="form__item">
+                        <textarea name="" id="" cols="30" rows="10" class="textarea form__textarea" placeholder="Ваш комментарий"></textarea>
+                    </div>
+                    <a href="#" class="btn btn__black js-popups-true">Отправить</a>
+                </form>
+            </div>
+        
+        
+        
+        
+    </div>
+</div>
+
+<div id="oneclick" class="popup" style="display: none">
+    <div class="popup__wrapper popup__wrapper-oneclick">
+        
+        
+            <span class="title"><span class="title__pos">Купить в  1 клик</span></span>
+            <span class="popup__info">Мы перезвоним вам в ближайшее время</span>
+            <span class="popup__subinfo">Для совершения заказа достаточно ввести <br>ваше имя и контактный телефон</span>
+            <div class="popups__form">
+                <form action="" class="form">
+                    <div class="form__item">
+                        <input type="text" class="input form__input" placeholder="Ваше имя">
+                    </div>
+                    <div class="form__item">
+                        <input type="tel" class="input form__input" placeholder="Ваш телефон">
+                    </div>
+                    <a href="#" class="btn btn__black js-popups-true">Отправить</a>
+                </form>
+            </div>
+        
+        
+        
+    </div>
+</div>
+
+<div id="carts" class="popup" style="display: none">
+    <div class="popup__wrapper popup__wrapper-cart">
+        
+        
+        
+            <span class="title"><span class="title__pos">Товар добавлен в корзину</span></span>
+            <span class="popup__info">Теперь в Вашей корзине</span>
+            <span class="popup__info-cart"><a href="#" class="popup__info-link">2 ТОВАРА</a> на сумму 1600 РУБ</span>
+            <div class="popup__product">
+                <div class="popup__product-list">
+                    <div class="order__cart">
+                        <div class="order__cart-list">
+                            
+                                <a href="#" class="order__cart-item">
+                                    <span class="order__cart-img">
+                                        <img src="pic/cart/img01.jpg" alt="img01">
+                                    </span>
+                                    <span class="order__cart-right">
+                                        <span class="order__cart-name">Комплект Babystyle Защитный оранжевый</span>
+                                        <span class="order__cart-price">8660 РУБ</span>
+                                    </span>
+                                </a>
+                            
+                                <a href="#" class="order__cart-item">
+                                    <span class="order__cart-img">
+                                        <img src="pic/cart/img02.jpg" alt="img02">
+                                    </span>
+                                    <span class="order__cart-right">
+                                        <span class="order__cart-name">Пустышка - Розовая пудра</span>
+                                        <span class="order__cart-price">1835 РУБ</span>
+                                    </span>
+                                </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup__bottom">
+                <span class="popup__col">
+                    <a href="#" class="btn btn__transparent btn__transparent--black bold">
+                        <svg class="btn__transparent-icon btn__transparent-icon--left">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow_left"></use>
+                        </svg>
+                        <span class="btn__transparent-text">Продолжить покупки</span>
+                    </a>
+                </span>
+                <span class="popup__col">
+                    <a href="#" class="btn btn__black  bold">Перейти в корзину</a>
+                </span>
+            </div>
+        
+        
+    </div>
+</div>
+
+<div id="thank" class="popup" style="display: none">
+    <div class="popup__wrapper popup__wrapper-thank">
+        
+        
+        
+        
+            <span class="title"><span class="title__pos">Спасибо!</span></span>
+            <span class="popup__info">Ваш запрос успешно отправлен</span>
+            <span class="popup__subinfo">Мы перезвоним Вам в ближайшее время</span>
+        
+    </div>
+</div>
+
+
+<footer class="footer js-footer">    
+    <div class="container">
+        <div class="footer__wrapper">
+
+            <div class="footer__left">
+                <div class="footer__nav">
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Малыши</a>
+                            <ul class="footer__sublist">
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Пустышки</a>
+                                </li>
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Держатели ждя пустышек</a>
+                                </li>
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Нагрудники</a>
+                                </li>
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Головные уборы</a>
+                                </li>
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Перчатки и варежки</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Мальчики</a>
+                            <ul class="footer__sublist">
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Аксесуары</a>
+                                </li>
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Шапки</a>
+                                </li>
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Варежки</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Девочки</a>
+                            <ul class="footer__sublist">
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Головные уборы</a>
+                                </li>
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Варежки и перчатки</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Коляски и аксессуары</a>
+                            <ul class="footer__sublist">
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Коляски</a>
+                                </li>
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Вкладыши</a>
+                                </li>
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Конверты</a>
+                                </li>
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Дождевики</a>
+                                </li>
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Москитные сетки</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Домашняя коллекция</a>
+                            <ul class="footer__sublist">
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Пледы</a>
+                                </li>
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Постельное белье</a>
+                                </li>
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Полотенце</a>
+                                </li>
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Корзины для белья</a>
+                                </li>
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Игровые коврики</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Сумки и рюкзаки</a>
+                            <ul class="footer__sublist">
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Детские рюкзаки</a>
+                                </li>
+                                <li class="footer__subitem">
+                                    <a href="#" class="footer__sublink">Сумки для мам</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="footer__list footer__list--small">
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">О нас</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Доставка</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Новости</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Оплата</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__right">
+                <div class="footer__social">
+                    <div class="social">
+    <ul class="social__list">
+        
+            <li class="social__item">
+    <a href="#" class="social__link social__link--white">
+        <svg class="social__icon social__icon--white social__icon--facebook">
+            <use xlink:href="#facebook"></use>
+        </svg>
+    </a>
+</li>
+        
+            <li class="social__item">
+    <a href="#" class="social__link social__link--white">
+        <svg class="social__icon social__icon--white social__icon--vk">
+            <use xlink:href="#vk"></use>
+        </svg>
+    </a>
+</li>
+        
+            <li class="social__item">
+    <a href="#" class="social__link social__link--white">
+        <svg class="social__icon social__icon--white social__icon--instagram">
+            <use xlink:href="#instagram"></use>
+        </svg>
+    </a>
+</li>
+        
+            <li class="social__item">
+    <a href="#" class="social__link social__link--white">
+        <svg class="social__icon social__icon--white social__icon--youtube">
+            <use xlink:href="#youtube"></use>
+        </svg>
+    </a>
+</li>
+        
+    </ul>
+</div>
+                </div>
+                <div class="footer__button">
+                    <a href="#question" class="btn btn__transparent btn__transparent--white footer__btn js-popup">
+                        <svg class="btn__transparent-icon btn__transparent-icon--mail">
+                            <use xlink:href="#mail"></use>
+                        </svg>
+                        <span class="btn__transparent-text">Напишите нам</span>
+                    </a>
+                </div>
+                <div class="footer__master">
+                    <ul class="footer__master-list">
+                        <li class="footer__master-item">
+                            <a href="#" class="footer__master-link">
+                                <svg class="footer__master-icon footer__master-icon--visa">
+                                    <use xlink:href="#card_visa"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="footer__master-item">
+                            <a href="#" class="footer__master-link">
+                                <svg class="footer__master-icon footer__master-icon--mc">
+                                    <use xlink:href="#card_mc"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer__copyright">
+        <div class="container">
+            <div class="footer__copyright-left">
+                <span class="footer__copyright-text">Все материалы данного сайта являются объектами авторского права (в том числе дизайн). Запрещается копирование, распространение (в том числе путем копирования на другие сайты и ресурсы в Интернете) или любое иное использование информации и объектов без предварительного согласия правообладателя.</span>
+            </div>
+            <div class="footer__copyright-right">
+                <a href="#" class="footer__copyright-link">Мультисайт</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<a href="#" class="back-to-top">
+    <svg class="back-to-top__icon">
+        <use xlink:href="#arrow_top"></use>
+    </svg>
+</a>
+
+
+		
+		<!-- @if NODE_ENV='production' -->
+    <script src="js/vendor.js"></script>
+    <script src="js/requare.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYHOEZdESOqGvGexEfnugSQyo0vgmzNhA&&language=ru&region=ru" async defer></script>
+    <!-- @endif -->
+    
+</body>
+</html>
+
+
