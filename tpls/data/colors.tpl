@@ -1,102 +1,5 @@
 <?php
 $FORMS = Array();
-
-$FORMS['groups_block'] = <<<END
-<ul>
-	%lines%
-</ul>
-END;
-
-$FORMS['groups_line'] = <<<END
-<li>
-	%data getPropertyGroup('%id%', '%group_id%', '%template%')%
-</li>
-END;
-
-
-$FORMS['group'] = <<<END
-[Group], %title% (%name%)
-<ul>
-    %lines%
-</ul>
-END;
-
-$FORMS['group_line'] = <<<END
-<li>
-    %prop%
-</li>
-END;
-
-
-
-$FORMS['int'] = <<<END
-[Int], %title% (%name%): %value%
-
-END;
-
-$FORMS['price'] = <<<END
-[Price], %title% (%name%): %value%
-
-END;
-
-
-$FORMS['string'] = <<<END
-%title%: %value%
-END;
-
-$FORMS['text'] = <<<END
-[Text], %title% (%name%): %value%
-
-END;
-
-
-$FORMS['relation'] = <<<END
-[Relation] %title% (%name%): %value% (%object_id%)
-
-END;
-
-$FORMS['file'] = <<<END
-[File], %title% (%name%)<br />
-Filename: %filename%;<br />
-Filepath: %filepath%;<br />
-Filepath: %src%;<br />
-Size: %size%<br />
-Extension: %ext%<br />
-<a href="%src%">%src%</a>
-END;
-
-$FORMS['swf_file'] = $FORMS['img_file'] = <<<END
-[Image File], %title% (%name%)<br />
-Filename: %filename%;<br />
-Filepath: %filepath%;<br />
-Filepath: %src%;<br />
-Size: %size%<br />
-Extension: %ext%<br />
-%width% %height%<br />
-<img src="%src%" width="%width%" height="%height%" />
-
-END;
-
-$FORMS['date'] = <<<END
-[Date], %title% (%name%): %value%
-
-END;
-
-$FORMS['boolean_yes'] = <<<END
-[Boolean], %title% (%name%): Да
-END;
-
-$FORMS['boolean_no'] = <<<END
-[Boolean], %title% (%name%): Нет
-END;
-
-
-$FORMS['wysiwyg'] = <<<END
-[HTML text], %title% (%name%): %value%
-
-END;
-
-
 /* Multiple property blocks */
 
 $FORMS['relation_mul_block'] = <<<END
@@ -111,11 +14,19 @@ END;
 
 /* Multiple property quant */
 $FORMS['symlink_block'] = <<<END
-[Symlink multiple], %title%: %items%
+<span class="product__title">Цветовая схема</span>
+<ul class="product__color-list">
+    %items%
+</ul>
 END;
 
 $FORMS['symlink_item'] = <<<END
-<a href="%link%">%value%(%id%, %object_id%)</a>%quant%
+<li class="product__color-item">
+    <!--a href="%link%">%value%(%id%, %object_id%)</a-->
+    <a href="%link%" class="product__color-link active">
+        %custom makeThumbnail(%data getProperty(%id%, 'izobrazhenie_1', 'izobrazhenie')%, 52, 52,'default', 0, 0, '%h1%')%
+    </a>
+</li>
 END;
 
 $FORMS['symlink_quant'] = <<<END
