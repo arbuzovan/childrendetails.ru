@@ -26,6 +26,7 @@ $FORMS['category_block_line'] = <<<END
   <a href="%link%" class="rubric__item-holder">
         <span class="rubric__top">
             <img src="%header_pic%" alt="%text%">
+            %custom makeThumbnail(%data getProperty(%id%, '%header_pic%', 'izobrazhenie')%, 270, 235,'default', 0, 0, '%h1%')%
         </span>
                 <span class="rubric__bottom">
             <span class="rubric__title">

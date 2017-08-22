@@ -6,9 +6,10 @@
         %core navibar('default',0)%
 
         <div class="product">
-            <h1 class="title"><span class="title__pos">%h1%</span></h1>
+            
+            <h1 class="title"><span class="title__pos">%header%</span></h1>
 
-            %catalog viewObject(%id%, 'default')%
+            %content%
 
         </div>
     </div>
