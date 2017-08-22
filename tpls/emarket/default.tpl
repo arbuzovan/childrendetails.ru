@@ -2,16 +2,8 @@
 $FORMS = array();
 	
 $FORMS['price_block'] = <<<END
-
-<h5>Вывод цены</h5>
 %price-original%
 %price-actual%
-
-%emarket discountInfo(%discount_id%)%
-
-%currency-prices%
-
-
 END;
 
 $FORMS['price_original'] = <<<END
