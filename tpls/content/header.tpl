@@ -14,7 +14,7 @@
 <body>
 <div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
 
-</div>  
+</div>
 
 
 <header class="header sticky-wrapper">
@@ -31,26 +31,26 @@
 
 </div>
 <div class="header__top-right">
-<div class="header__top-row">
-<div class="header__top-tel">
-    <a href="tel:+79062355689" class="header__top-link">
-        <svg class="header__top-icon">
-        <use xlink:href="#phone"></use>
-        </svg>
-        <span class="header__tel">7 906 235 56 89</span>
-    </a>
-</div>
-<div class="header__top-user">
-    <ul class="header__user-list">
-        <li class="header__user-item">
-            <a href="#" class="header__user-link">Вход</a>
-        </li>
-        <li class="header__user-item">
-            <a href="#" class="header__user-link">Регистрация</a>
-        </li>
-    </ul>
-</div>
-</div>
+    <div class="header__top-row">
+        <div class="header__top-tel">
+            <a href="tel:+79062355689" class="header__top-link">
+                <svg class="header__top-icon">
+                    <use xlink:href="#phone"></use>
+                </svg>
+                <span class="header__tel">7 906 235 56 89</span>
+            </a>
+        </div>
+        <div class="header__top-user">
+            <ul class="header__user-list">
+                <li class="header__user-item">
+                    <a href="#" class="header__user-link">Вход</a>
+                </li>
+                <li class="header__user-item">
+                    <a href="#" class="header__user-link">Регистрация</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 </div>
 </div>
@@ -99,7 +99,7 @@
             <li class="social__item">
                 <a href="#" class="social__link social__link--grey">
                     <svg class="social__icon social__icon--grey social__icon--instagram">
-                    <use xlink:href="#instagram"></use>
+                        <use xlink:href="#instagram"></use>
                     </svg>
                 </a>
             </li>
@@ -110,32 +110,31 @@
 <div class="header__cart">
     <a href="/emarket/cart/" class="btn btn-cart">
         <svg class="btn-cart-icon">
-        <use xlink:href="#cart"></use>
+            <use xlink:href="#cart"></use>
         </svg>
         <span class="btn-cart-text">2 ТОВАРА</span>
         <span class="btn-cart-price">16 000 руб</span>
     </a>
-
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="header__bottom js-sticky-header">
-<div class="container">
-<div class="header__bottom-left">
-<a href="#" class="header__bottom-logo">
-<img src="/pic/logo-small.png" alt="logo-small">
-</a>
-</div>
-<div class="header__bottom-center">
+    <div class="container">
+        <div class="header__bottom-left">
+            <a href="#" class="header__bottom-logo">
+                <img src="/pic/logo-small.png" alt="logo-small">
+            </a>
+        </div>
+        <div class="header__bottom-center">
 
-%content menu('menu-catalog', 3, 2)%
- 
-</div>
-<div class="header__bottom-right">
-<a href="tel:+79062146984" class="header__bottom-link">7 906 214 69 84</a>
-</div>
-</div>
+        %content menu('menu-catalog', 3, 2)%
+
+        </div>
+        <div class="header__bottom-right">
+            <a href="tel:+79062146984" class="header__bottom-link">7 906 214 69 84</a>
+        </div>
+    </div>
 </div>
 </header>
