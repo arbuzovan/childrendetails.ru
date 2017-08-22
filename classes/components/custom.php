@@ -178,5 +178,30 @@
                     }
 		}
 
-                
+                /**
+                 * 
+                 * @param type $settingName Имя блока настроек
+                 * @param type $paramName   Имя параметра для выводы
+                 * @return boolean
+                 * @throws publicException
+                 */
+                public function getSiteSetting($settingName = false, $paramName = false){
+                    if(!$settingName || empty($settingName)){
+                        return false;
+                    }
+                    
+                    if(!$paramName || empty($paramName)){
+                        return false;
+                    }
+                    
+                    $mSettings = cmsController::getInstance()->getModule("umiSettings");
+                    $settingsId = $mSettings->getId($settingName);
+                    
+                    if(!$settingsId || empty($settingsId)){
+                        throw new publicException("Ощибка получения настроек");
+                    }
+                    
+                    $value = umiObjectsCollection::getInstance()->getObject($settingsId)->getValue($paramName);
+                    return $value;
+                }
 	}
