@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="/css/main.css">
 <link rel="shortcut icon" href="/pic/favicon_16.jpg" sizes="16x16" type="image/x-icon">
 <link rel="shortcut icon" href="/pic/favicon_164.jpg" sizes="164x164" type="image/x-icon">
+<meta name="robots" content="noindex, nofollow"/>
 <!-- @endif -->
 </head>
 <body>
@@ -107,7 +108,7 @@
     </div>
 </div>
 <div class="header__cart">
-    <a href="#" class="btn btn-cart">
+    <a href="/emarket/cart/" class="btn btn-cart">
         <svg class="btn-cart-icon">
         <use xlink:href="#cart"></use>
         </svg>
