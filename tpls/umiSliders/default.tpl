@@ -2,11 +2,16 @@
 
 $FORMS = Array();
 
-$FORMS['previous'] = <<<END
-<a href="%link%" title="%h1%">Previous</a>
+$FORMS['slider'] = <<<END
+%slides%
 END;
 
-$FORMS['previous_first'] = <<<END
+$FORMS['slides'] = <<<END
+%umiSlider SliderDataForTemplate(%id%)%
+%scope%
+END;
+
+$FORMS['slide'] = <<<END
 <u>Previous</u>
 END;
 
