@@ -106,7 +106,7 @@
 
         </div>
         <div class="header__bottom-right">
-            <a href="tel:+79062146984" class="header__bottom-link">7 906 214 69 84</a>
+            <a href="tel:%custom getSiteSetting('Шапка','phone_1')%" class="header__bottom-link">%custom getSiteSetting('Шапка','phone_1')%</a>
         </div>
     </div>
 </div>

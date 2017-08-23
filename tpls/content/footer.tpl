@@ -172,7 +172,9 @@
 <div class="footer__copyright">
 <div class="container">
 <div class="footer__copyright-left">
-<span class="footer__copyright-text">Все материалы данного сайта являются объектами авторского права (в том числе дизайн). Запрещается копирование, распространение (в том числе путем копирования на другие сайты и ресурсы в Интернете) или любое иное использование информации и объектов без предварительного согласия правообладателя.</span>
+<span class="footer__copyright-text">
+    %custom getSiteSetting('Шапка','footer_copyright')%
+</span>
 </div>
 <div class="footer__copyright-right">
 <a href="#" class="footer__copyright-link">Мультисайт</a>
