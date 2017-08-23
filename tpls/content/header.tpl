@@ -60,7 +60,9 @@
 <div class="header__middle-holder">
 <div class="header__middle-left">
 <a href="/" class="header__logo">
-    <img src="/pic/logo.png" alt="logo">
+    <!--img src="/pic/logo.png" alt="logo"-->
+
+    %custom makeThumbnail(%custom getSiteSetting('Шапка','logo')%, 200, auto,'default', 0, 0, %header%)%
 </a>
 </div>
 <div class="header__search">
@@ -95,7 +97,7 @@
     <div class="container">
         <div class="header__bottom-left">
             <a href="#" class="header__bottom-logo">
-                <img src="/pic/logo-small.png" alt="logo-small">
+                <img src="%custom getSiteSetting('Шапка','small_logo')%" alt="%header%">
             </a>
         </div>
         <div class="header__bottom-center">

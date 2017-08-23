@@ -2,18 +2,18 @@
 $FORMS = array();
 	
 $FORMS['price_block'] = <<<END
-%price-original%
-%price-actual%
-END;
-
-$FORMS['price_original'] = <<<END
-<span class="product__old-price">
-    <strike>%prefix%&nbsp;%original%&nbsp;%suffix%</strike>
+<span class="slider-four__price">
+    %price-original%
+    %price-actual%
 </span>
 END;
 
+$FORMS['price_original'] = <<<END
+    <span class="slider-four__price-old">%prefix%&nbsp;%original%&nbsp;%suffix%</span>
+END;
+
 $FORMS['price_actual'] = <<<END
-<span class="product__new-price">%prefix%&nbsp;%actual% &nbsp;%suffix%</span>
+<span class="slider-four__price-now">%prefix%&nbsp;%actual% &nbsp;%suffix%</span>
 END;
 
 ?>
