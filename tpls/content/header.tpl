@@ -56,42 +56,42 @@
 </div>
 </div>
 <div class="header__middle">
-<div class="container">
-<div class="header__middle-holder">
-<div class="header__middle-left">
-<a href="/" class="header__logo">
-    <!--img src="/pic/logo.png" alt="logo"-->
-
-    %custom makeThumbnail(%custom getSiteSetting('Шапка','logo')%, 200, auto,'default', 0, 0, %header%)%
-</a>
-</div>
-<div class="header__search">
-<form action="" class="form form--search js-placeholder-container">
-    <span class="form__search">
-        <input type="text" class="input form__search-input js-search" placeholder="">
-        <div class="placeholderDiv js-placeholderDiv">Введите интересующий товар. Например, <a href="#">рюкзак</a> или <a href="#">шапочка</a></div>
-        <button type="submit" class="form__btn-icon">
-            <svg class="form__icon">
-            <use xlink:href="#search"></use>
-            </svg>
-        </button>
-    </span>
-</form>
-</div>
-<div class="header__middle-right">
-    %custom getSiteSocialsNeworkSetting('Шапка','socials_net','social_networks_header')%
-<div class="header__cart">
-    <a href="/emarket/cart/" class="btn btn-cart">
-        <svg class="btn-cart-icon">
-            <use xlink:href="#cart"></use>
-        </svg>
-        <span class="btn-cart-text">2 ТОВАРА</span>
-        <span class="btn-cart-price">16 000 руб</span>
-    </a>
-</div>
-</div>
-</div>
-</div>
+    <div class="container">
+        <div class="header__middle-holder">
+            <div class="header__middle-left">
+                <a href="/" class="header__logo">
+                    %custom makeThumbnail(%custom getSiteSetting('Шапка','logo')%, 200, auto,'default', 0, 0, %header%)%
+                </a>
+            </div>
+            <div class="header__search">
+                <form action="" class="form form--search js-placeholder-container">
+                    <span class="form__search">
+                        <input type="text" class="input form__search-input js-search" placeholder="">
+                        <div class="placeholderDiv js-placeholderDiv">
+                            %custom getPlaceholderFromSettings()%
+                        </div>
+                        <button type="submit" class="form__btn-icon">
+                            <svg class="form__icon">
+                            <use xlink:href="#search"></use>
+                            </svg>
+                        </button>
+                    </span>
+                </form>
+            </div>
+            <div class="header__middle-right">
+                %custom getSiteSocialsNeworkSetting('Шапка','socials_net','social_networks_header')%
+                <div class="header__cart">
+                    <a href="/emarket/cart/" class="btn btn-cart">
+                        <svg class="btn-cart-icon">
+                            <use xlink:href="#cart"></use>
+                        </svg>
+                        <span class="btn-cart-text">2 ТОВАРА</span>
+                        <span class="btn-cart-price">16 000 руб</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="header__bottom js-sticky-header">
     <div class="container">

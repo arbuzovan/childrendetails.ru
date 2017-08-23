@@ -270,4 +270,68 @@
                     return def_module::parseTemplate($template_block, $block_arr);
 
                 }
+                
+                /**
+                 * Функция фозвращает массив позиций элемента
+                 * @param type $string
+                 * @param type $symbol
+                 * @return boolean
+                 */
+                public function getSymbolPos($string = false, $symbol = false){
+                    if(empty($string) || empty($symbol)){
+                        return false;
+                    }
+                    
+                    $result = [];
+                    $pos = 0;
+                    while(($pos = strpos($string, $symbol, $pos+1))!==false) {
+                        $result[] = $pos;
+                    }
+                    
+                    return $result;
+                }
+                
+                public function getPlaceholderFromSettings(){
+                    $placeholderRawString = $this->getSiteSetting('шапка', 'placeholder');
+                    $placeholderItems = $this->getSiteSetting('шапка', 'placeholder_item_links');
+                    
+                    $itemsId = array();
+                    foreach ($placeholderItems as $itemId){
+                        $itemsId[] = $itemId;
+                    }
+                
+                    $openSymbolPositions = $this->getSymbolPos($placeholderRawString,'[');
+                    $closeSymbolPositions = $this->getSymbolPos($placeholderRawString,']');
+                    
+                    if(count($openSymbolPositions) != count($closeSymbolPositions)){
+                        return false;
+                    }
+                    
+                    $replaceStringArray = array();
+                    $index = 0;
+                    foreach ($openSymbolPositions as $index => $value) {
+                        $start_position = $openSymbolPositions[$index];
+                        $stop_position = $closeSymbolPositions[$index];
+                        $length = $stop_position - $start_position;
+                        $replaceString = substr($placeholderRawString, $start_position, $length+1);
+                        $replaceStringArray[] = $replaceString;
+                        $index++;
+                    }
+                    
+                    $hierarchy = umiHierarchy::getInstance();
+                    
+                    $paths = array();
+                    foreach ($itemsId as $index => $itemElement){
+                        $paths[] = $hierarchy->getPathById($itemElement->id);
+                    }
+                    
+                    foreach ($replaceStringArray as $index => $replaceString){;
+                        $searchWord = str_replace('[', '',$replaceString);
+                        $searchWord = str_replace(']', '',$searchWord);
+                        $placeholderRawString = str_replace($replaceStringArray[$index], '<a href="/search/search_do/?search_string='.$searchWord.'&search-or-mode=0">'.$searchWord.'</a>',$placeholderRawString);
+                    }
+                    
+                    return $placeholderRawString;
+                    
+                }
 	}
