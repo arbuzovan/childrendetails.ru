@@ -13,7 +13,8 @@
 		'view' => [
                     'getCountSubCategries',
                     'getCountItems',
-                    'getCountItemsPostfix'
+                    'getCountItemsPostfix',
+                    'setOrderDirection',
                 ]
 	];
 ?>

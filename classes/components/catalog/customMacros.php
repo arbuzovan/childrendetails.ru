@@ -54,6 +54,11 @@
                     return $count;
                 }
                 
+                /**
+                 * Функция должна возвращать правильное окончание для подписей.
+                 * @param type $count
+                 * @return string
+                 */
                 public function getCountItemsPostfix($count = 0) {
                     switch ($count) {
                         case 1:
@@ -67,6 +72,23 @@
                             return 'ий';
                             break;
                     }
+                }
+                
+                /**
+                 * Функия заносит параметр для сортировки в сессию, что бы не гонять его GET
+                 */
+                public function setOrderDirection() {
+                    $session = \UmiCms\Service::Session();
+                    
+                    $dataString = getRequest('data');
+                    $explodeArray = explode('_',$dataString);
+                    $orderFieldName = $explodeArray[0];
+                    $orderFieldDirection = $explodeArray[1];
+                    
+                    $session->set('orderFieldName', $orderFieldName);
+                    $session->set('orderFieldDirection', $orderFieldDirection);
+                    
+                    exit;
                 }
 	}
 ?>

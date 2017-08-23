@@ -33,9 +33,9 @@
 
                 </div>
                 <div class="subsection-filter__select subsection-filter__select--noradius">
-                    <select name="" id="">
-                        <option label="Цена (от высокой к низкой)">Цена (от высокой к низкой)</option>
-                        <option value="Алфавит (от А до Я)">Алфавит (от А до Я)</option>
+                    <select name="cat_order" id="cat_order">
+                        <option label="Цена (от высокой к низкой)" value='price_asc'>Цена (от высокой к низкой)</option>
+                        <option label="Алфавит (от А до Я)" value="name_asc">Алфавит (от А до Я)</option>
                     </select>
                 </div>
             </div>
