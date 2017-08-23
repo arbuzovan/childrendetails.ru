@@ -34,14 +34,15 @@
                 </div>
                 <div class="subsection-filter__select subsection-filter__select--noradius">
                     <select name="cat_order" id="cat_order">
-                        <option label="Цена (от высокой к низкой)" value='price_asc'>Цена (от высокой к низкой)</option>
+                        <option label="Цена (от высокой к низкой)" value='price_desc'>Цена (от высокой к низкой)</option>
+                        <option label="Цена (от низкой к высокой)" value='price_asc'>Цена (от низкой к высокой)</option>
                         <option label="Алфавит (от А до Я)" value="name_asc">Алфавит (от А до Я)</option>
+                        <option label="Алфавит (от Я до А)" value="name_desc">Алфавит (от Я до А)</option>
                     </select>
                 </div>
             </div>
             <div class="catalog-subsection__list">
-
-                %catalog getSmartCatalog('default', %id%, 10)%
+                %catalog getSmartCatalog('default', %id%, 10, false, 1, %catalog getOrderFieldName()%, %catalog getisAscDirection()%)%
             </div>
 
 

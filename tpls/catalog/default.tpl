@@ -5,7 +5,6 @@ $FORMS = Array();
 $FORMS['category'] = <<<END
 %catalog getCategoryList('default', '%category_id%', 100, 1)%
 %catalog getObjectsList('default', '%category_id%')%
-
 END;
 
 

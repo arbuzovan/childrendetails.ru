@@ -80,8 +80,9 @@
                 public function setOrderDirection() {
                     $session = \UmiCms\Service::Session();
                     
-                    $dataString = getRequest('data');
+                    $dataString = getRequest('orderValue');
                     $explodeArray = explode('_',$dataString);
+                    
                     $orderFieldName = $explodeArray[0];
                     $orderFieldDirection = $explodeArray[1];
                     
@@ -89,6 +90,20 @@
                     $session->set('orderFieldDirection', $orderFieldDirection);
                     
                     exit;
+                }
+                
+                public function getOrderFieldName($param) {
+                    $session = \UmiCms\Service::Session();
+                    return $session->get('orderFieldName');
+                }
+                
+                public function getisAscDirection($param) {
+                    $session = \UmiCms\Service::Session();
+                    if($session->get('orderFieldDirection') == 'asc'){
+                        return true;
+                    }else{
+                        return false;
+                    }
                 }
 	}
 ?>
