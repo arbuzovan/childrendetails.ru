@@ -100,13 +100,17 @@ END;
 /* Multiple property blocks */
 
 $FORMS['relation_mul_block'] = <<<END
-[Relation multiple], %title% (%name%): %items%
+<span class="product__title">%title%</span>
+<select name="" id="" class="js-select-%name%">
+    <option label="Выберите %title%" value=""></option>
+    %items%
+</select>
 END;
 
 /* Multiple property item */
 
 $FORMS['relation_mul_item'] = <<<END
-%value%(%object_id%)%quant%
+<option value="62 СМ" value="%object_id%">%value%</option>
 END;
 
 /* Multiple property quant */

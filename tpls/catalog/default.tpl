@@ -83,55 +83,55 @@ $FORMS['view_block'] = <<<END
 <div class="product__row">
    <div class="product__col">
       
-<div class="product__slider js-product-slider-container">
-    <div class="product__slider-list js-product-slider">
-        
-            <div class="product__slider-item">
-                <a href="%data getProperty(%id%, 'izobrazhenie_1', 'izobrazhenie')%" class="product__slider-link">
-                    %custom makeThumbnail(%data getProperty(%id%, 'izobrazhenie_1', 'izobrazhenie')%, 570, 570,'default', 0, 0, '%h1%')%
-                </a>
-            </div>
-        
-            <div class="product__slider-item">
-                <a href="%data getProperty(%id%, 'izobrazhenie_2', 'izobrazhenie')%" class="product__slider-link">
-                    %custom makeThumbnail(%data getProperty(%id%, 'izobrazhenie_2', 'izobrazhenie')%, 570, 570,'default', 0, 0, '%h1%')%
-                </a>
-            </div>
-        
-            <div class="product__slider-item">
-                <a href="%data getProperty(%id%, 'izobrazhenie_3', 'izobrazhenie')%" class="product__slider-link">
-                    %custom makeThumbnail(%data getProperty(%id%, 'izobrazhenie_3', 'izobrazhenie')%, 570, 570,'default', 0, 0, '%h1%')%
-                </a>
-            </div>
-        
-            <div class="product__slider-item">
-                <a href="%data getProperty(%id%, 'izobrazhenie_4', 'izobrazhenie')%" class="product__slider-link">
-                    %custom makeThumbnail(%data getProperty(%id%, 'izobrazhenie_4', 'izobrazhenie')%, 570, 570,'default', 0, 0, '%h1%')%
-                </a>
-            </div>
+    <div class="product__slider js-product-slider-container">
+        <div class="product__slider-list js-product-slider">
 
-        
+                <div class="product__slider-item">
+                    <a href="%data getProperty(%id%, 'izobrazhenie_1', 'izobrazhenie')%" class="product__slider-link">
+                        %custom makeThumbnail(%data getProperty(%id%, 'izobrazhenie_1', 'izobrazhenie')%, 570, 570,'default', 0, 0, '%h1%')%
+                    </a>
+                </div>
+
+                <div class="product__slider-item">
+                    <a href="%data getProperty(%id%, 'izobrazhenie_2', 'izobrazhenie')%" class="product__slider-link">
+                        %custom makeThumbnail(%data getProperty(%id%, 'izobrazhenie_2', 'izobrazhenie')%, 570, 570,'default', 0, 0, '%h1%')%
+                    </a>
+                </div>
+
+                <div class="product__slider-item">
+                    <a href="%data getProperty(%id%, 'izobrazhenie_3', 'izobrazhenie')%" class="product__slider-link">
+                        %custom makeThumbnail(%data getProperty(%id%, 'izobrazhenie_3', 'izobrazhenie')%, 570, 570,'default', 0, 0, '%h1%')%
+                    </a>
+                </div>
+
+                <div class="product__slider-item">
+                    <a href="%data getProperty(%id%, 'izobrazhenie_4', 'izobrazhenie')%" class="product__slider-link">
+                        %custom makeThumbnail(%data getProperty(%id%, 'izobrazhenie_4', 'izobrazhenie')%, 570, 570,'default', 0, 0, '%h1%')%
+                    </a>
+                </div>
+
+
+        </div>
+        <div class="product__slider-navlist js-product-slider-nav">
+
+                <div class="product__slider-navitem">
+                    <img src="%data getProperty(%id%, 'izobrazhenie_1', 'izobrazhenie')%" alt="">
+                </div>
+
+                <div class="product__slider-navitem">
+                    <img src="%data getProperty(%id%, 'izobrazhenie_2', 'izobrazhenie')%" alt="">
+                </div>
+
+                <div class="product__slider-navitem">
+                    <img src="%data getProperty(%id%, 'izobrazhenie_3', 'izobrazhenie')%" alt="">
+                </div>
+
+                <div class="product__slider-navitem">
+                    <img src="%data getProperty(%id%, 'izobrazhenie_4', 'izobrazhenie')%" alt="">
+                </div>
+
+        </div>
     </div>
-    <div class="product__slider-navlist js-product-slider-nav">
-        
-            <div class="product__slider-navitem">
-                <img src="%data getProperty(%id%, 'izobrazhenie_1', 'izobrazhenie')%" alt="">
-            </div>
-            
-            <div class="product__slider-navitem">
-                <img src="%data getProperty(%id%, 'izobrazhenie_2', 'izobrazhenie')%" alt="">
-            </div>
-            
-            <div class="product__slider-navitem">
-                <img src="%data getProperty(%id%, 'izobrazhenie_3', 'izobrazhenie')%" alt="">
-            </div>
-        
-            <div class="product__slider-navitem">
-                <img src="%data getProperty(%id%, 'izobrazhenie_4', 'izobrazhenie')%" alt="">
-            </div>
-        
-    </div>
-</div>
       
       
       
@@ -143,61 +143,13 @@ $FORMS['view_block'] = <<<END
          <div class="product__prev-nav">
             <span class="product__prev-art">%data getProperty(%id%, 'sku')%</span>
             <div class="product__color">
-               <span class="product__title">Цветовая схема</span>
-               <ul class="product__color-list">
-                  <li class="product__color-item">
-                     <a href="#" class="product__color-link active">
-                     <img src="/pic/product-color/img01.jpg" alt="">
-                     </a>
-                  </li>
-                  <li class="product__color-item">
-                     <a href="#" class="product__color-link ">
-                     <img src="/pic/product-color/img02.jpg" alt="">
-                     </a>
-                  </li>
-                  <li class="product__color-item">
-                     <a href="#" class="product__color-link ">
-                     <img src="/pic/product-color/img03.jpg" alt="">
-                     </a>
-                  </li>
-                  <li class="product__color-item">
-                     <a href="#" class="product__color-link ">
-                     <img src="/pic/product-color/img04.jpg" alt="">
-                     </a>
-                  </li>
-                  <li class="product__color-item">
-                     <a href="#" class="product__color-link ">
-                     <img src="/pic/product-color/img05.jpg" alt="">
-                     </a>
-                  </li>
-                  <li class="product__color-item">
-                     <a href="#" class="product__color-link ">
-                     <img src="/pic/product-color/img06.jpg" alt="">
-                     </a>
-                  </li>
-               </ul>
+               %data getProperty(%id%,'colors','colors')%
             </div>
             <div class="product__size">
-               <span class="product__title">Размер</span>
-               <select name="" id="" class="js-select-size">
-                  <option label="Выберите размер"></option>
-                  <option value="62 СМ">62 СМ</option>
-                  <option value="68 СМ">68 СМ</option>
-                  <option value="74 СМ">74 СМ</option>
-                  <option value="80 СМ">80 СМ</option>
-                  <option value="86 СМ">86 СМ</option>
-               </select>
+                %data getProperty(%id%,'size','default')%
             </div>
             <div class="product__age">
-               <span class="product__title">Возраст</span>
-               <select name="" id="" class="js-select-age">
-                  <option label="Выберите Возраст"></option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-               </select>
+                %data getProperty(%id%,'age','default')%
             </div>
          </div>
          <div class="product__price">
