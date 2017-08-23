@@ -172,25 +172,21 @@
     
     
     
-    
+%news lastlist('news','novosti_na_glavnoj',3)%    
     
     
 
-<div class="news-prev">
+<!--div class="news-prev">
 <span class="title"><span class="title__pos">Новости</span></span>
 <div class="news-prev__list">
 
     %data getProperty(%id%, 'novosti_na_glavnoj', 'novosti_na_glavnoj')%
      
-    
 
 
-<div class="news-prev__item">
-<iframe src="//widget.instagramm.ru/?imageW=2&imageH=1&thumbnail_size=124&type=0&typetext=mtsite.ru&head_show=1&profile_show=1&shadow_show=0&bg=255,255,255,1&opacity=true&head_bg=1a1819&subscribe_bg=91bdc0&border_color=f0f1f3&head_title=" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:274px;height:296px;"></iframe>
-</div>
 </div>
 <a href="%content get_page_url(39)%" class="btn btn--grey news-prev__btn">Все новости</a>
-</div>
+</div-->
 
 <section class="info-text">
     
