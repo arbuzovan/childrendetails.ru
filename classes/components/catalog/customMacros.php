@@ -92,11 +92,21 @@
                     exit;
                 }
                 
+                /**
+                 * Функиця возвразает поле по которому должна пройти сортировка
+                 * @param type $param
+                 * @return type
+                 */
                 public function getOrderFieldName($param) {
                     $session = \UmiCms\Service::Session();
                     return $session->get('orderFieldName');
                 }
                 
+                /**
+                 * Функция возвращает true, если задана сортировка по возрастанию и false если нет
+                 * @param type $param
+                 * @return boolean
+                 */
                 public function getisAscDirection($param) {
                     $session = \UmiCms\Service::Session();
                     if($session->get('orderFieldDirection') == 'asc'){
