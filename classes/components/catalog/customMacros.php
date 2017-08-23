@@ -115,5 +115,25 @@
                         return false;
                     }
                 }
+                
+                public function isOrderedValue($param) {
+                    if(empty($param)){
+                        return false;
+                    }
+                    $session = \UmiCms\Service::Session();
+                    
+                    if(empty($session->get('orderFieldName'))){
+                        return false;
+                    }
+                    
+                    $orderFieldName = $session->get('orderFieldName');
+                    $orderFieldDirection = $session->get('orderFieldDirection');
+                    
+                    if($orderFieldName.'_'.$orderFieldDirection == $param){
+                        return 'selected';
+                    }else{
+                        return false;
+                    }
+                }
 	}
 ?>

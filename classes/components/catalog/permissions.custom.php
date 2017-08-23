@@ -16,7 +16,8 @@
                     'getCountItemsPostfix',
                     'setOrderDirection',
                     'getOrderFieldName',
-                    'getisAscDirection'
+                    'getisAscDirection',
+                    'isOrderedValue'
                 ]
 	];
 ?>
