@@ -25,7 +25,7 @@
 <nav class="header__nav">
     <div class="nav">
     %content menu('menu-top')%
-    
+
 </div>
 </nav>
 
@@ -33,7 +33,7 @@
 <div class="header__top-right">
     <div class="header__top-row">
         <div class="header__top-tel">
-            <a href="tel:%custom getSiteSetting('Шапка','phone_1')%" class="header__top-link">
+            <a href="tel:%custom getSiteSetting('Шапка','phone_1', true)%" class="header__top-link">
                 <svg class="header__top-icon">
                     <use xlink:href="#phone"></use>
                 </svg>
@@ -106,7 +106,7 @@
 
         </div>
         <div class="header__bottom-right">
-            <a href="tel:%custom getSiteSetting('Шапка','phone_1')%" class="header__bottom-link">%custom getSiteSetting('Шапка','phone_1')%</a>
+            <a href="tel:%custom getSiteSetting('Шапка','phone_1', true)%" class="header__bottom-link">%custom getSiteSetting('Шапка','phone_1')%</a>
         </div>
     </div>
 </div>
