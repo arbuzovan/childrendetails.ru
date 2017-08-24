@@ -23,8 +23,7 @@
         </svg>
     </div>
     <div class="working__text">
-        <span class="working__title">Работаем</span>
-        <span class="working__subtitle">без выходных</span>
+        %custom getSiteSetting('Шапка','advantage_1')%
     </div>
 </div>
 </div>
@@ -37,8 +36,7 @@
         </svg>
     </div>
     <div class="working__text">
-        <span class="working__title">Доставка</span>
-        <span class="working__subtitle">по всей России</span>
+        %custom getSiteSetting('Шапка','advantage_2')%
     </div>
 </div>
 </div>
@@ -51,8 +49,7 @@
         </svg>
     </div>
     <div class="working__text">
-        <span class="working__title">Скидки</span>
-        <span class="working__subtitle">постоянным клиентам</span>
+        %custom getSiteSetting('Шапка','advantage_3')%
     </div>
 </div>
 </div>
@@ -65,8 +62,7 @@
         </svg>
     </div>
     <div class="working__text">
-        <span class="working__title">Частое</span>
-        <span class="working__subtitle">обновление коллекций</span>
+        %custom getSiteSetting('Шапка','advantage_4')%
     </div>
 </div>
 </div>
@@ -162,34 +158,18 @@
     
     
 <div class="slider-four">
-<span class="title"><span class="title__pos">Вам может понравиться</span></span>
-<div class="slider-four__list js-slider">
-  
-%data getProperty(%id%, 'tovary_na_glavnoj', 'tovary_na_glavnoj')%
-    
+    <span class="title">
+        <span class="title__pos">%custom getSiteSetting('Шапка','main_page_items_caption')%</span>
+    </span>
+    <div class="slider-four__list js-slider">
+        %custom getSiteSetting('Шапка','main_page_items')%
+    </div>
 </div>
-</div>
-    
-    
     
 %news lastlist('news','novosti_na_glavnoj',3)%    
     
-    
-
-<!--div class="news-prev">
-<span class="title"><span class="title__pos">Новости</span></span>
-<div class="news-prev__list">
-
-    %data getProperty(%id%, 'novosti_na_glavnoj', 'novosti_na_glavnoj')%
-     
-
-
-</div>
-<a href="%content get_page_url(39)%" class="btn btn--grey news-prev__btn">Все новости</a>
-</div-->
-
 <section class="info-text">
-    
+    <h1>%header%</h1>
     %content%
 
 </section>
