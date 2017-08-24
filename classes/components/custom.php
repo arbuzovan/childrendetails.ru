@@ -3,38 +3,49 @@
 		public function cms_callMethod($method_name, $args) {
 			return call_user_func_array(Array($this, $method_name), $args);
 		}
-		
+
 		public function __call($method, $args) {
 			throw new publicException("Method " . get_class($this) . "::" . $method . " doesn't exist");
 		}
-                
+
+                /**
+                 * Создание миниатюры с сохранием пропорций и т.п. Работает лучше штатного
+                 * @param string $path  Путь к картинке
+                 * @param type $width   Ширина
+                 * @param type $height  Высота
+                 * @param string $template Шаблон вывода
+                 * @param type $returnArrayOnly возвращать массив с данными поленного изображения
+                 * @param type $fixHeight
+                 * @param type $alt_text    Текст alt
+                 * @return string
+                 */
 		public function makeThumbnail($path, $width, $height, $template = "default", $returnArrayOnly = false, $fixHeight = false, $alt_text = '') {
 
                     if(!$template){
                         $template = "default";
                     }
-                    
+
                     $thumbs_path = CURRENT_WORKING_DIR."/images/.tmb/";
                     $path = CURRENT_WORKING_DIR.$path;
-                    
+
                     $image = new umiImageFile($path);
-                    
+
                     $file_name = $image->getFileName();
-                    
+
                     $file_ext = $image->getExt();
 
                     $thumbPath = sha1($image->getDirName());
-                    
+
                     if (!is_dir($thumbs_path.$thumbPath)) {
                         mkdir($thumbs_path.$thumbPath, 0755);
                     }
 
                     $file_ext = strtolower($file_ext);
-                    
-                    
+
+
                     $allowedExts = Array('gif', 'jpeg', 'jpg', 'png', 'bmp');
-                    
-                    
+
+
                     if(!in_array($file_ext, $allowedExts)){
                         return "";
                     }
@@ -172,105 +183,113 @@
                     if(true == $returnArrayOnly) {
                         return $arr;
                     } else {
-                        
+
                         list($tpl) = def_module::loadTemplates("thumbs/{$template}.tpl", "image");
                         return def_module::parseTemplate($tpl, $arr);
                     }
 		}
 
                 /**
-                 * 
+                 *
                  * @param type $settingName Имя блока настроек
-                 * @param type $paramName   Имя параметра для выводы
+                 * @param type $paramName   Имя параметра для вывода
+                 * @param type $alltrim   Если передано true, то в выводе будут убраны все пробелы. Бывает нужно для телефонов и пр.
                  * @return boolean
                  * @throws publicException
                  */
-                public function getSiteSetting($settingName = false, $paramName = false){
+                public function getSiteSetting($settingName = false, $paramName = false, $alltrim = false){
                     if(!$settingName || empty($settingName)){
                         return false;
                     }
-                    
+
                     if(!$paramName || empty($paramName)){
                         return false;
                     }
-                    
+
                     $mSettings = cmsController::getInstance()->getModule("umiSettings");
                     $settingsId = $mSettings->getId($settingName);
-                    
+
                     if(!$settingsId || empty($settingsId)){
                         throw new publicException("Ощибка получения настроек");
                     }
-                    
+
                     $value = umiObjectsCollection::getInstance()->getObject($settingsId)->getValue($paramName);
-                    
+
+                    if($alltrim){
+                        $value = str_replace(' ','',$value);
+                    }
+
                     if(empty($value)){
                         return false;
                     }
-                    
+
                     return $value;
                 }
-                
+
+                /**
+                 * Функция берет блок с ссылками на соц сети и зависимости от их наличлия показывает иконки
+                 * @param type $settingName
+                 * @param type $groupName
+                 * @param string $template
+                 * @return boolean
+                 * @throws publicException
+                 */
                 public function getSiteSocialsNeworkSetting($settingName = false, $groupName = false, $template = 'social_networks'){
                     if(!$settingName || empty($settingName)){
                         return false;
                     }
-                    
+
                     if(!$groupName || empty($groupName)){
                         return false;
                     }
-                    
+
                     $mSettings = cmsController::getInstance()->getModule("umiSettings");
                     $settingsId = $mSettings->getId($settingName);
-                    
+
                     if(!$settingsId || empty($settingsId)){
                         throw new publicException("Ощибка получения настроек");
                     }
-                    
+
                     $aIds = umiObjectsCollection::getInstance()->getObject($settingsId)->getPropGroupByName($groupName);
 
                     if($aIds == false || empty($aIds)){
                         return false;
                     }
-                    
-                    
-                    
+
                     if (!$template) {
                         $template = "social_networks";
                     }
 
-                    
-                    
                     list($template_block,$template_line) = def_module::loadTemplates("data/reflection/".$template, "sc_networks_block","sc_networks_item");
                     $block_arr = array();
                     $lines = array();
-                    
-                    
+
                     foreach ($aIds as $socialNetworkId){
-                        
+
                         $scFldObject = umiFieldsCollection::getInstance()->getField($socialNetworkId);
-                        
+
                         $fldName = $scFldObject->getName();
                         $settingValue = $this->getSiteSetting($settingName, $scFldObject->getName());
-                        
+
                         if(empty($settingValue)){
                             continue;
                         }
-                        
+
                         $line_arr = Array();
                         $line_arr['attribute:id'] = $socialNetworkId;
                         $line_arr['attribute:name'] = $fldName;
                         $line_arr['attribute:title'] = $scFldObject->getTitle();
-                        
+
                         $line_arr['attribute:value'] = $this->getSiteSetting($settingName, $scFldObject->getName());
 
                         $lines[] = def_module::parseTemplate($template_line, $line_arr, $socialNetworkId);
                     }
-                    
+
                     $block_arr['subnodes:items']  = $lines;
                     return def_module::parseTemplate($template_block, $block_arr);
 
                 }
-                
+
                 /**
                  * Функция фозвращает массив позиций элемента
                  * @param type $string
@@ -281,32 +300,38 @@
                     if(empty($string) || empty($symbol)){
                         return false;
                     }
-                    
+
                     $result = [];
                     $pos = 0;
                     while(($pos = strpos($string, $symbol, $pos+1))!==false) {
                         $result[] = $pos;
                     }
-                    
+
                     return $result;
                 }
-                
+
+                /**
+                 * Показ плейсхолдера из настроек
+                 * @return boolean
+                 */
                 public function getPlaceholderFromSettings(){
                     $placeholderRawString = $this->getSiteSetting('шапка', 'placeholder');
-                    $placeholderItems = $this->getSiteSetting('шапка', 'placeholder_item_links');
                     
-                    $itemsId = array();
-                    foreach ($placeholderItems as $itemId){
-                        $itemsId[] = $itemId;
-                    }
-                
+//  Первоначально была возможность указать на какие конкретнпо товары может вести ссылка.
+//                    $placeholderItems = $this->getSiteSetting('шапка', 'placeholder_item_links');
+//
+//                    $itemsId = array();
+//                    foreach ($placeholderItems as $itemId){
+//                        $itemsId[] = $itemId;
+//                    }
+
                     $openSymbolPositions = $this->getSymbolPos($placeholderRawString,'[');
                     $closeSymbolPositions = $this->getSymbolPos($placeholderRawString,']');
-                    
+
                     if(count($openSymbolPositions) != count($closeSymbolPositions)){
                         return false;
                     }
-                    
+
                     $replaceStringArray = array();
                     $index = 0;
                     foreach ($openSymbolPositions as $index => $value) {
@@ -317,21 +342,73 @@
                         $replaceStringArray[] = $replaceString;
                         $index++;
                     }
-                    
+
                     $hierarchy = umiHierarchy::getInstance();
-                    
+
                     $paths = array();
                     foreach ($itemsId as $index => $itemElement){
                         $paths[] = $hierarchy->getPathById($itemElement->id);
                     }
-                    
+
                     foreach ($replaceStringArray as $index => $replaceString){;
                         $searchWord = str_replace('[', '',$replaceString);
                         $searchWord = str_replace(']', '',$searchWord);
                         $placeholderRawString = str_replace($replaceStringArray[$index], '<a href="/search/search_do/?search_string='.$searchWord.'&search-or-mode=0">'.$searchWord.'</a>',$placeholderRawString);
                     }
-                    
+
                     return $placeholderRawString;
+                }
+                
+                /**
+                 * Вывод на главной странице товаров, которые заданы в настройках
+                 * @param type $limit
+                 * @param type $template
+                 * @return type
+                 */
+                public function getMainPageItemsFromSettings($limit = 3, $template = "mainPageItems") {
+                    $main_page_items = $this->getSiteSetting('шапка', 'main_page_items');
                     
+                    $umiHierarchy = umiHierarchy::getInstance();
+                    
+			list(
+				$itemsTemplate,
+				$emptyItemsTemplate,
+				$itemTemplate
+				) = def_module::loadTemplates(
+				'catalog/' . $template,
+				'objects_block',
+				'objects_block_empty',
+				'objects_block_line'
+			);
+                        
+                    
+			$result = array();
+			$items = array();
+
+			foreach ($main_page_items as $page) {
+
+                            $pageId = $page->getId();
+                            
+                            $categroyId = $umiHierarchy->getParent($pageId);
+                            $categryName = $umiHierarchy->getElement($categroyId)->getName();
+                            $categryPath = $umiHierarchy->getPathById($categroyId);
+                            
+                            $item = array();
+
+                            $item['attribute:id'] = $pageId;
+                            $item['attribute:alt_name'] = $page->getAltName();
+                            $item['attribute:price'] = $page->getValue('price');
+                            $item['attribute:link'] = $umiHierarchy->getPathById($pageId);
+                            $item['attribute:categry_name'] = $categryName;
+                            $item['attribute:category_link'] = $categryPath;
+                            $item['xlink:href'] ='upage://' . $pageId;
+                            $item['node:text'] = $page->getName();
+                            $items[] = def_module::parseTemplate($itemTemplate, $item, $pageId);
+                            $umiHierarchy->unloadElement($pageId);
+			}
+                        
+			$result['subnodes:lines'] = $items;
+
+			return def_module::parseTemplate($itemsTemplate, $result);
                 }
 	}
