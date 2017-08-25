@@ -28,7 +28,11 @@
                     
                     $count = $hierarchy->getChildrenCount($categoryId, false, true, $depth, $typeId);
                     
-                    return $count;
+                    if($count > 0){
+                        return $count.' видов продукции';
+                    }
+                    
+                    return false;
                 }
                 
                 /**
@@ -51,7 +55,10 @@
                     
                     $count = $hierarchy->getChildrenCount($categoryId, false, true, $depth, $typeId);
                     
-                    return $count;
+                    if($count > 0){
+                        return $count.' наименований';
+                    }
+                    return false;
                 }
                 
                 /**
