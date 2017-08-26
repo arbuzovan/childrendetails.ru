@@ -2,24 +2,26 @@
 $FORMS = Array();
 
 $FORMS['delivery_block'] = <<<END
-<form action="%pre_lang%/emarket/purchase/delivery/choose/do/" method="post">
-	Выберите подходящий вам способ доставки:
-	<ul>
-		%items%
-	</ul>
-
-	<p>
-		<input type="submit" />
-	</p>
+<form action="" method="post">
+            <div class="ordering__form-delivery">
+                <span class="ordering__form-title">Способ доставки</span>
+                %items%
+            </div>
 </form>
 END;
 
 $FORMS['delivery_item_free'] = <<<END
-	<li><input type="radio" name="delivery-id" value="%id%" checked="checked" /> %name% - бесплатно</li>
+    <span class="form__item">
+        <input type="radio" name="radio_%id%" id="%id%">
+        <label for="radio_%id%">%name% - бесплатно</label>
+    </span>
 END;
 
 $FORMS['delivery_item_priced'] = <<<END
-	<li><input type="radio" name="delivery-id" value="%id%" /> %name% - %price%</li>
+    <span class="form__item">
+        <input type="radio" name="radio_%id%" id="%id%">
+        <label for="radio_%id%">%name% - %price%</label>
+    </span>
 END;
 
 

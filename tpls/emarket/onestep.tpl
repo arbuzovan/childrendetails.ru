@@ -2,170 +2,45 @@
 $FORMS = array();
 	
 $FORMS['price_block'] = <<<END
+<span class="slider-four__price">
     %price-original%
     %price-actual%
+</span>
 END;
 
 $FORMS['price_original'] = <<<END
-    <div class="cart__total"><strike>%prefix%&nbsp;%original%&nbsp;%suffix%</strike></div>
+    <span class="slider-four__price-old">%prefix%&nbsp;%original%&nbsp;%suffix%</span>
 END;
 
 $FORMS['price_actual'] = <<<END
-    <div class="cart__total">%prefix%&nbsp;%actual% &nbsp;%suffix%</div>
+<span class="slider-four__price-now">%prefix%&nbsp;%actual% &nbsp;%suffix%</span>
 END;
 
 
 $FORMS['order_block'] = <<<END
-<div class="cart">
-   <table class="cart__table">
-      <thead class="cart__thead">
-         <tr class="cart__row">
-            <th class="cart__cell cart__cell--head"></th>
-            <th class="cart__cell cart__cell--head">Название товара</th>
-            <th class="cart__cell cart__cell--head">Размер</th>
-            <th class="cart__cell cart__cell--head">Цена</th>
-            <th class="cart__cell cart__cell--head">Количество</th>
-            <th class="cart__cell cart__cell--head">Стоимость</th>
-            <th class="cart__cell cart__cell--head"></th>
-         </tr>
-      </thead>
-      <tbody class="cart__tbody">
+    <div class="order__cart">
+        <div class="order__cart-list">
             %items%
-      </tbody>
-   </table>
-   <div class="cart-bottom">
-        <div class="cart-bottom__right">
-            <span class="cart-bottom__prod">Вы выбрали %total-amount% товаров</span>
-            <span class="cart-bottom__text">Общая стоимость: </span>
-            <span class="cart-bottom__price">%total-price%</span>
-            <span class="cart-bottom__btn">
-                <a href="#" class="btn btn__black">Оформить заказ</a>
-            </span>
         </div>
-   </div>
-</div>
-<div class="slider-four">
-   <span class="title"><span class="title__pos">Персональные рекомендации</span></span>
-   <div class="slider-four__list js-slider">
-      <div class="slider-four__item">
-         <div class="slider-four__holder">
-            <a href="pic/slider_four_scroll/img09.png" class="slider-four__img">
-            <img src="pic/slider_four_scroll/img09.png" alt="img09">
-            </a>
-            <a href="#" class="slider-four__title js-height">Комплект Babystyle Защитный оранжевый</a>
-            <a href="#" class="slider-four__category ">Elodie Details</a>
-            <span class="slider-four__price">
-            <span class="slider-four__price-now">8660 РУБ</span>
-            </span>
-         </div>
-      </div>
-      <div class="slider-four__item">
-         <div class="slider-four__holder">
-            <a href="pic/slider_four_scroll/img10.png" class="slider-four__img">
-            <img src="pic/slider_four_scroll/img10.png" alt="img10">
-            </a>
-            <a href="#" class="slider-four__title js-height">Комплект Babystyle Защитный оранжевый</a>
-            <a href="#" class="slider-four__category ">Elodie Details</a>
-            <span class="slider-four__price">
-            <span class="slider-four__price-old">8660 РУБ</span>
-            <span class="slider-four__price-now">6990 РУБ</span>
-            </span>
-         </div>
-      </div>
-      <div class="slider-four__item">
-         <div class="slider-four__holder">
-            <a href="pic/slider_four_scroll/img11.png" class="slider-four__img">
-            <img src="pic/slider_four_scroll/img11.png" alt="img11">
-            </a>
-            <a href="#" class="slider-four__title js-height">Комплект Babystyle Защитный оранжевый</a>
-            <a href="#" class="slider-four__category ">Elodie Details</a>
-            <span class="slider-four__price">
-            <span class="slider-four__price-now">8660 РУБ</span>
-            </span>
-         </div>
-      </div>
-      <div class="slider-four__item">
-         <div class="slider-four__holder">
-            <a href="pic/slider_four_scroll/img12.png" class="slider-four__img">
-            <img src="pic/slider_four_scroll/img12.png" alt="img12">
-            </a>
-            <a href="#" class="slider-four__title js-height">Комплект Babystyle Защитный оранжевый</a>
-            <a href="#" class="slider-four__category ">Elodie Details</a>
-            <span class="slider-four__price">
-            <span class="slider-four__price-now">8660 РУБ</span>
-            </span>
-         </div>
-      </div>
-      <div class="slider-four__item">
-         <div class="slider-four__holder">
-            <a href="pic/slider_four_scroll/img12.png" class="slider-four__img">
-            <img src="pic/slider_four_scroll/img12.png" alt="img12">
-            </a>
-            <a href="#" class="slider-four__title js-height">Комплект Babystyle Защитный оранжевый</a>
-            <a href="#" class="slider-four__category ">Elodie Details</a>
-            <span class="slider-four__price">
-            <span class="slider-four__price-now">8660 РУБ</span>
-            </span>
-         </div>
-      </div>
-   </div>
-</div>
+        <div class="order__cart-cost">
+            <span class="order__cart-total">Общая стоимость:</span>
+            <span class="order__cart-totalcost">16000 РУБ</span>
+            <span class="order__cart-total">Итог: </span>
+            <span class="order__cart-totalprice">16800 РУБ</span>
+        </div>
+    </div>
 END;
 
 $FORMS['order_item'] = <<<END
-    <tr class="cart__row">
-       <td class="cart__cell">
-          <div class="cart__cell-img">
-            <a href="#" class="cart__link-img">
-                %custom makeThumbnail(%data getProperty(%element_id%, 'izobrazhenie_1', 'izobrazhenie')%, 150, 150,'default', 0, 0)%
-            </a>
-          </div>
-       </td>
-       <td class="cart__cell">
-          <a href="%link%" class="cart__name">%name%</a>
-          <span class="cart__article">
-           %data getProperty(%element_id%,'sku')%
-          </span>
-       </td>
-       <td class="cart__cell">
-          <span class="select">
-             <select name="" id="">
-                <option value="">68 СМ</option>
-                <option value="">78 СМ</option>
-                <option value="">88 СМ</option>
-             </select>
-          </span>
-       </td>
-       <td class="cart__cell">
-          <span class="cart__price" data-text="Цена">%price%</span>
-       </td>
-       <td class="cart__cell">
-          <div class="spinner js-spinner" data-min="1" data-max="100">
-             <a href="#" title="" class="spinner__trigger spinner__trigger--minus js-spinner-minus">
-                <svg class="icon-minus spinner__trigger-icon">
-                   <use xlink:href="#button_minus"></use>
-                </svg>
-             </a>
-             <input type="text" class="spinner__input js-spinner-input" value="%amount%">
-             <a href="#" title="" class="spinner__trigger spinner__trigger--plus js-spinner-plus">
-                <svg class="icon-plus spinner__trigger-icon">
-                   <use xlink:href="#button_plus"></use>
-                </svg>
-             </a>
-          </div>
-       </td>
-        <td class="cart__cell">
-           <span class="cart__total" data-text="Итого">%total-price%</span>
-        </td>
-        <td class="cart__cell">
-             <a href="%pre_lang%/emarket/basket/remove/item/%id%/" class="cart__remove">
-                 <svg class="cart__remove-ico error-ico">
-                     <use xlink:href="#close"></use>
-                 </svg>
-             </a>
-        </td>
-    </tr>
-    <tr class="cart__line"></tr>
+        <a href="#" class="order__cart-item">
+            <span class="order__cart-img">
+                %custom makeThumbnail(%data getProperty(%element_id%, 'izobrazhenie_1', 'izobrazhenie')%, 70, 70,'default', 0, 0)%
+            </span>
+            <span class="order__cart-right">
+                <span class="order__cart-name">%name%</span>
+                <span class="order__cart-price">1835 РУБ</span>
+            </span>
+        </a>
 END;
 
 $FORMS['options_block'] = <<<END
