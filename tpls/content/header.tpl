@@ -81,13 +81,7 @@
             <div class="header__middle-right">
                 %custom getSiteSocialsNeworkSetting('Шапка','socials_net','social_networks_header')%
                 <div class="header__cart">
-                    <a href="/emarket/cart/" class="btn btn-cart">
-                        <svg class="btn-cart-icon">
-                            <use xlink:href="#cart"></use>
-                        </svg>
-                        <span class="btn-cart-text">2 ТОВАРА</span>
-                        <span class="btn-cart-price">16 000 руб</span>
-                    </a>
+                    %emarket cart('basket')%
                 </div>
             </div>
         </div>
