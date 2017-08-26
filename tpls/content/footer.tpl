@@ -51,56 +51,11 @@
 
 <div id="carts" class="popup" style="display: none">
     <div class="popup__wrapper popup__wrapper-cart">
-        
-        
-        
             <span class="title"><span class="title__pos">Товар добавлен в корзину</span></span>
             <span class="popup__info">Теперь в Вашей корзине</span>
-            <span class="popup__info-cart"><a href="#" class="popup__info-link">2 ТОВАРА</a> на сумму 1600 РУБ</span>
-            <div class="popup__product">
-                <div class="popup__product-list">
-                    <div class="order__cart">
-                        <div class="order__cart-list">
-                            
-                                <a href="#" class="order__cart-item">
-                                    <span class="order__cart-img">
-                                        <img src="/pic/cart/img01.jpg" alt="img01">
-                                    </span>
-                                    <span class="order__cart-right">
-                                        <span class="order__cart-name">Комплект Babystyle Защитный оранжевый</span>
-                                        <span class="order__cart-price">8660 РУБ</span>
-                                    </span>
-                                </a>
-                            
-                                <a href="#" class="order__cart-item">
-                                    <span class="order__cart-img">
-                                        <img src="/pic/cart/img02.jpg" alt="img02">
-                                    </span>
-                                    <span class="order__cart-right">
-                                        <span class="order__cart-name">Пустышка - Розовая пудра</span>
-                                        <span class="order__cart-price">1835 РУБ</span>
-                                    </span>
-                                </a>
-                            
-                        </div>
-                    </div>
-                </div>
+            <div class="popup__wrapper__content">
+                %emarket cart("addPopup")%
             </div>
-            <div class="popup__bottom">
-                <span class="popup__col">
-                    <a href="#" class="btn btn__transparent btn__transparent--black bold">
-                        <svg class="btn__transparent-icon btn__transparent-icon--left">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow_left"></use>
-                        </svg>
-                        <span class="btn__transparent-text">Продолжить покупки</span>
-                    </a>
-                </span>
-                <span class="popup__col">
-                    <a href="#" class="btn btn__black  bold">Перейти в корзину</a>
-                </span>
-            </div>
-        
-        
     </div>
 </div>
 
