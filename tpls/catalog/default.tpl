@@ -31,8 +31,8 @@ $FORMS['category_block_line'] = <<<END
                 <span class="rubric__title-pos js-height">%text%</span>
             </span>
             <span class="rubric__calc">
-                <span class="rubric__calc-name">%catalog getCountItems(%id%)% наименова%catalog getCountItemsPostfix(%catalog getCountItems(%id%)%)%</span>
-                <span class="rubric__calc-product">%catalog getCountSubCategries(%id%)% видов продукции</span>
+                <span class="rubric__calc-name">%catalog getCountItems(%id%)%</span>
+                <span class="rubric__calc-product">%catalog getCountSubCategries(%id%)%</span>
             </span>
         </span>
 </a>
@@ -158,7 +158,7 @@ $FORMS['view_block'] = <<<END
                      <use xlink:href="#button_minus"></use>
                   </svg>
                </a>
-               <input type="text" class="spinner__input js-spinner-input">
+               <input id="amount_%id%" rel="%id%" type="text" class="spinner__input js-spinner-input" value="1">
                <a href="#" title="" class="spinner__trigger spinner__trigger--plus js-spinner-plus">
                   <svg class="icon-plus spinner__trigger-icon">
                      <use xlink:href="#button_plus"></use>
@@ -166,7 +166,7 @@ $FORMS['view_block'] = <<<END
                </a>
             </div>
             <span class="product__btn">
-               <a href="#carts" class="btn btn__product-cart js-popup">
+               <a href="#carts" rel="%id%" class="btn btn__product-cart js-popup-carts">
                   <svg class="btn__product-cart-icon">
                      <use xlink:href="#cart"></use>
                   </svg>
