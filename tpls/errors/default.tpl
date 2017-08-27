@@ -2,15 +2,15 @@
 $FORMS = Array();
 
 $FORMS['errors_block'] = <<<END
-<ul>
-	%items%
-</ul>
+<section class="error__wrapper">
+    %items%
+</section>
 END;
 
 $FORMS['errors_block_line'] = <<<END
-	<li style="color: red; font-weight: bold">
-		%message%
-	</li>
+    <div class="error">
+        %message%
+    </div>
 END;
 
 ?>
