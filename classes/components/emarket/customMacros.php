@@ -263,6 +263,9 @@
                     }
                 }
 	
+                /**
+                 * Функция проверят заявку на обратный звонок и отправляет письмо на почту менеджеру
+                 */
                 public function oneClickOrder() {
                     $itemID = getRequest('id');
                     $clientName = getRequest('name');
@@ -310,6 +313,68 @@
                     echo json_encode($answer);
                     exit;
                 }
+
+
+                /**
+                 * Функция проверят заявку на обратный звонок и отправляет письмо на почту менеджеру
+                 */
+                public function backCallRequest() {
+                    $itemID = getRequest('id');
+                    $clientName = getRequest('name');
+                    $clientPhone = getRequest('phone');
+                    $clientComment = getRequest('comment');
+                            
+                    $answer = array();
+                    $answer['status'] = 'error';
+                    
+                    if(empty($clientName)){
+                        $answer['message'] = 'Пожалуйста, укажите Ваше имя';
+                        $answer['fldID'] = 'backcall__name';
+                        echo json_encode($answer);
+                        exit;
+                    }
+                    
+                    if(empty($clientPhone)){
+                        $answer['message'] = 'Пожалуйста, укажите Ваше номер телефона для связи';
+                        $answer['fldID'] = 'backcall__phone';
+                        echo json_encode($answer);
+                        exit;
+                    }
+                    
+                    if(empty($clientComment)){
+                        $answer['message'] = 'Пожалуйста, напишите ваш вопрос';
+                        $answer['fldID'] = 'backcall__comment';
+                        echo json_encode($answer);
+                        exit;
+                    }
+                    
+                    $hierarchy = umiHierarchy::getInstance();
+                    $page = $hierarchy->getElement($itemID);
+
+                    $adminEmail = regedit::getInstance()->getVal("//modules/emarket/manager-email/1");
+                    $fromEmail = regedit::getInstance()->getVal("//modules/emarket/from-email/1");
+                    
+                    $content = "";
+                    $content .= "Пользователь: ".htmlspecialchars($clientName)."<br>";
+                    $content .= "Номер телефона: ".htmlspecialchars($clientPhone)."<br>";
+                    $content .= "Вопрос: ".htmlspecialchars($clientComment);
+                    
+                    $letter = new umiMail();
+                    $letter->addRecipient($adminEmail);
+                    $letter->setFrom($fromEmail);
+                    $letter->setSubject('Вопрос с сайта');
+                    $letter->setContent($content);
+                    $letter->commit();
+                    $letter->send();
+                    
+                    $answer['status'] = 'ok';
+                    $answer['message'] = false;
+                    
+                    echo json_encode($answer);
+                    exit;
+                }
+
+
                 
         }
 ?>

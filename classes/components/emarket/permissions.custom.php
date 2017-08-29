@@ -14,7 +14,9 @@
                         'one_step_order',
 			'deliveryListCustom',
                         'getPersonalReccomendation',
-                        'addNewAdress'
+                        'addNewAdress',
+                        'oneClickOrder',
+                        'backCallRequest'
 		]
 	];
 ?>

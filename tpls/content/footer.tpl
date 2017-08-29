@@ -1,27 +1,22 @@
   <div id="question" class="popup" style="display: none">
     <div class="popup__wrapper popup__wrapper-question">
-        
-            <span class="title"><span class="title__pos">Возникли вопросы?</span></span>
-            <span class="popup__info">Мы перезвоним вам в ближайшее время</span>
-            <span class="popup__subinfo">График работы %custom getSiteSetting('Шапка','worktime')%</span>
-            <div class="popup__form">
-                <form action="" class="form">
-                    <div class="form__item">
-                        <input type="text" class="input form__input" placeholder="Ваше имя">
-                    </div>
-                    <div class="form__item">
-                        <input type="tel" class="input form__input" placeholder="Ваш телефон">
-                    </div>
-                    <div class="form__item">
-                        <textarea name="" id="" cols="30" rows="10" class="textarea form__textarea" placeholder="Ваш комментарий"></textarea>
-                    </div>
-                    <a href="#" class="btn btn__black js-popups-true">Отправить</a>
-                </form>
-            </div>
-        
-        
-        
-        
+        <span class="title"><span class="title__pos">Возникли вопросы?</span></span>
+        <span class="popup__info">Мы перезвоним вам в ближайшее время</span>
+        <span class="popup__subinfo">График работы %custom getSiteSetting('Шапка','worktime')%</span>
+        <div class="popup__form">
+            <form action="" class="form">
+                <div class="form__item">
+                    <input id="backcall__name" type="text" class="input form__input" placeholder="Ваше имя">
+                </div>
+                <div class="form__item">
+                    <input id="backcall__phone" type="tel" class="input form__input" placeholder="Ваш телефон">
+                </div>
+                <div class="form__item">
+                    <textarea id="backcall__comment" name="" id="" cols="30" rows="10" class="textarea form__textarea" placeholder="Ваш комментарий"></textarea>
+                </div>
+                <a href="#" class="btn btn__black js-popups-backcall">Отправить</a>
+            </form>
+        </div>
     </div>
 </div>
 
