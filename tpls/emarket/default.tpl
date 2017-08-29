@@ -2,16 +2,18 @@
 $FORMS = array();
 	
 $FORMS['price_block'] = <<<END
+<span class="slider-four__price">
     %price-original%
     %price-actual%
+</span>
 END;
 
 $FORMS['price_original'] = <<<END
-    <div class="cart__total"><strike>%prefix%&nbsp;%original%&nbsp;%suffix%</strike></div>
+    <span class="slider-four__price-old">%prefix%&nbsp;%original%&nbsp;%suffix%</span>
 END;
 
 $FORMS['price_actual'] = <<<END
-    <div class="cart__total">%prefix%&nbsp;%actual% &nbsp;%suffix%</div>
+<span class="slider-four__price-now">%prefix%&nbsp;%actual% &nbsp;%suffix%</span>
 END;
 
 
@@ -39,11 +41,14 @@ $FORMS['order_block'] = <<<END
             <span class="cart-bottom__text">Общая стоимость: </span>
             <span class="cart-bottom__price">%total-price%</span>
             <span class="cart-bottom__btn">
-                <a href="#" class="btn btn__black">Оформить заказ</a>
+                <a href="/emarket/one_step_order/" class="btn btn__black">Оформить заказ</a>
             </span>
         </div>
    </div>
 </div>
+
+<!-- персональные реккомендации.
+
 <div class="slider-four">
    <span class="title"><span class="title__pos">Персональные рекомендации</span></span>
    <div class="slider-four__list js-slider">
@@ -59,57 +64,12 @@ $FORMS['order_block'] = <<<END
             </span>
          </div>
       </div>
-      <div class="slider-four__item">
-         <div class="slider-four__holder">
-            <a href="pic/slider_four_scroll/img10.png" class="slider-four__img">
-            <img src="pic/slider_four_scroll/img10.png" alt="img10">
-            </a>
-            <a href="#" class="slider-four__title js-height">Комплект Babystyle Защитный оранжевый</a>
-            <a href="#" class="slider-four__category ">Elodie Details</a>
-            <span class="slider-four__price">
-            <span class="slider-four__price-old">8660 РУБ</span>
-            <span class="slider-four__price-now">6990 РУБ</span>
-            </span>
-         </div>
-      </div>
-      <div class="slider-four__item">
-         <div class="slider-four__holder">
-            <a href="pic/slider_four_scroll/img11.png" class="slider-four__img">
-            <img src="pic/slider_four_scroll/img11.png" alt="img11">
-            </a>
-            <a href="#" class="slider-four__title js-height">Комплект Babystyle Защитный оранжевый</a>
-            <a href="#" class="slider-four__category ">Elodie Details</a>
-            <span class="slider-four__price">
-            <span class="slider-four__price-now">8660 РУБ</span>
-            </span>
-         </div>
-      </div>
-      <div class="slider-four__item">
-         <div class="slider-four__holder">
-            <a href="pic/slider_four_scroll/img12.png" class="slider-four__img">
-            <img src="pic/slider_four_scroll/img12.png" alt="img12">
-            </a>
-            <a href="#" class="slider-four__title js-height">Комплект Babystyle Защитный оранжевый</a>
-            <a href="#" class="slider-four__category ">Elodie Details</a>
-            <span class="slider-four__price">
-            <span class="slider-four__price-now">8660 РУБ</span>
-            </span>
-         </div>
-      </div>
-      <div class="slider-four__item">
-         <div class="slider-four__holder">
-            <a href="pic/slider_four_scroll/img12.png" class="slider-four__img">
-            <img src="pic/slider_four_scroll/img12.png" alt="img12">
-            </a>
-            <a href="#" class="slider-four__title js-height">Комплект Babystyle Защитный оранжевый</a>
-            <a href="#" class="slider-four__category ">Elodie Details</a>
-            <span class="slider-four__price">
-            <span class="slider-four__price-now">8660 РУБ</span>
-            </span>
-         </div>
+
       </div>
    </div>
 </div>
+
+-->
 END;
 
 $FORMS['order_item'] = <<<END
@@ -128,16 +88,10 @@ $FORMS['order_item'] = <<<END
           </span>
        </td>
        <td class="cart__cell">
-          <span class="select">
-             <select name="" id="">
-                <option value="">68 СМ</option>
-                <option value="">78 СМ</option>
-                <option value="">88 СМ</option>
-             </select>
-          </span>
+            %options%
        </td>
        <td class="cart__cell">
-          <span class="cart__price" data-text="Цена">%price%</span>
+          <span class="cart__price" data-text="Цена">%emarket price(%element_id%)%</span>
        </td>
        <td class="cart__cell">
           <div class="spinner js-spinner" data-min="1" data-max="100">
