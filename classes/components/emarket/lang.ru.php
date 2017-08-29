@@ -14,7 +14,8 @@
 		'purchase'				=> 'Оформление заказа',
 		'purchasing_one_step'	=> 'Оформление заказа',
 		'personal'				=> 'Личный кабинет',
-		'compare'				=> 'Сравнение товаров'
+		'compare'				=> 'Сравнение товаров',
+		'one_step_order'			=> 'Оформление заказа'
 	);
 
 	$LANG_EXPORT = array(
