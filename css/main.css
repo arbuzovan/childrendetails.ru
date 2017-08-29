@@ -5168,15 +5168,26 @@ select {
     background-color: #EFF1F2;
     padding: 10px;
     margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .error__wrapper div.error{
     color: red;
     font-weight: bold;
     font-weight: #D92828;
-    margin-bottom: 10px;
 }
 
 .error__wrapper div.error:last-child{
     margin-bottom: none;
+}
+
+.captcha__title{
+    font-size: 14px;
+}
+
+.captcha__img{
+    margin-left: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #e6e8e9;
+    
 }
