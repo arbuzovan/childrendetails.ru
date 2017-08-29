@@ -316,14 +316,6 @@
                  */
                 public function getPlaceholderFromSettings(){
                     $placeholderRawString = $this->getSiteSetting('шапка', 'placeholder');
-                    
-//  Первоначально была возможность указать на какие конкретнпо товары может вести ссылка.
-//                    $placeholderItems = $this->getSiteSetting('шапка', 'placeholder_item_links');
-//
-//                    $itemsId = array();
-//                    foreach ($placeholderItems as $itemId){
-//                        $itemsId[] = $itemId;
-//                    }
 
                     $openSymbolPositions = $this->getSymbolPos($placeholderRawString,'[');
                     $closeSymbolPositions = $this->getSymbolPos($placeholderRawString,']');
@@ -345,15 +337,10 @@
 
                     $hierarchy = umiHierarchy::getInstance();
 
-                    $paths = array();
-                    foreach ($itemsId as $index => $itemElement){
-                        $paths[] = $hierarchy->getPathById($itemElement->id);
-                    }
-
                     foreach ($replaceStringArray as $index => $replaceString){;
                         $searchWord = str_replace('[', '',$replaceString);
                         $searchWord = str_replace(']', '',$searchWord);
-                        $placeholderRawString = str_replace($replaceStringArray[$index], '<a href="/search/search_do/?search_string='.$searchWord.'&search-or-mode=0">'.$searchWord.'</a>',$placeholderRawString);
+                        $placeholderRawString = str_replace($replaceStringArray[$index], '<a href="/search/search_do/?search_string='.$searchWord.'&search-or-mode=0&search_types=52">'.$searchWord.'</a>',$placeholderRawString);
                     }
 
                     return $placeholderRawString;
