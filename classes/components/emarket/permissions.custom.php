@@ -10,8 +10,11 @@
 			/**
 			 * Кастомизированное оформление заказа в 1 шаг
 			 */
-			'one_step_order',
+                        'custom_basket',
+                        'one_step_order',
 			'deliveryListCustom',
+                        'getPersonalReccomendation',
+                        'addNewAdress'
 		]
 	];
 ?>

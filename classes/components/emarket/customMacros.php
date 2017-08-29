@@ -8,6 +8,129 @@
 		 */
 		public $module;
 
+		/**
+		 * Изменяет состояние корзины покупателя.
+		 *
+		 * Действия над корзиной:
+		 *
+		 * 1) /emarket/basket/put/element/16/ - положить в корзину товар (объект каталога) с id = 16
+		 * 2) /emarket/basket/put/element/16/?amount=2 - положить в корзину товар (объект каталога) с id = 16 в количестве = 2
+		 * 3) /emarket/basket/put/element/16/?options[name]=10 - положить в корзину товар (объект каталога) с id = 16 с опцией
+		 * 4) /emarket/basket/put/element/16/?amount=2&options[name]=10  2) и 3) пункты одновременно
+		 * 5) /emarket/basket/remove/element/16/ - убрать из корзины товар (объект каталога) с id = 16
+		 * 6) /emarket/basket/remove/item/16/ - убрать из корзины товар (наименование заказа) с id = 16
+		 * 7) /emarket/basket/remove_all - убрать из корзины все товары
+		 *
+		 * Вызывает пересчет корзины.
+		 * Либо возвращает заказ, либо осуществляет перенаправление.
+		 *
+		 * @param string|bool $mode выполняемое действие (put/remove/remove_all)
+		 * @param string|bool $itemType тип товара (element/item)
+		 * @param int|bool $itemId идентификатор товара
+		 * @return mixed
+		 * @throws publicException
+		 */
+		public function custom_basket($mode = false, $itemType = false, $itemId = false) {
+			$mode = $mode ? $mode : getRequest('param0');
+			/**
+			 * @var emarket|EmarketMacros $module
+			 */
+			$module = $this->module;
+			$order = $module->getBasketOrder(!in_array($mode, array('put', 'remove')));
+			$itemType = $itemType ? $itemType : getRequest('param1');
+			$itemId = (int) ($itemId ? $itemId : getRequest('param2'));
+			$amount = (int) getRequest('amount');
+			$options = getRequest('options');
+                        
+			switch ($mode) {
+				case 'remove_all' : {
+					foreach ($order->getItems() as $orderItem) {
+						$order->removeItem($orderItem);
+					}
+
+					break;
+				}
+				case 'remove' : {
+					$orderItem = ($itemType == 'element') ? $module->getBasketItem($itemId, false) : orderItem::get($itemId);
+
+					if ($orderItem instanceof orderItem) {
+						$order->removeItem($orderItem);
+					}
+
+					break;
+				}
+				case 'put' : {
+					$newElement = false;
+
+					if ($itemType == 'element') {
+						$orderItem = $module->getBasketItem($itemId, false);
+
+						if (!$orderItem) {
+							$orderItem = $module->getBasketItem($itemId);
+							$newElement = true;
+						}
+					} else {
+						$orderItem = $order->getItem($itemId);
+					}
+
+					if (!$orderItem instanceof orderItem) {
+						throw new publicException("Order item is not defined");
+					}
+
+
+                                        
+                                        
+					if (is_array($options)) {
+						if ($itemType != 'element') {
+							throw new publicException("Put basket method required element id of optionedOrderItem");
+						}
+
+						$orderItem = $this->appendOption($order, $orderItem, $options, $newElement, $itemId);
+					}
+
+					$oldAmount = $orderItem->getAmount();
+					//$amount = $amount ? $amount : ($oldAmount + 1);
+					$amount = $oldAmount + (int)$amount;
+					$orderItem->setAmount($amount);
+					$orderItem->refresh();
+					$newAmount = $orderItem->getAmount();
+
+					if ($itemType == 'element') {
+						$order->appendItem($orderItem);
+					} elseif($oldAmount != $newAmount) {
+						$order->saveTotalProperties();
+					}
+
+					break;
+				}
+			}
+
+			$order->refresh();
+			$referrer = getServer('HTTP_REFERER');
+			$noRedirect = getRequest('no-redirect');
+
+			if ($redirectUri = getRequest('redirect-uri')) {
+				$module->redirect($redirectUri);
+			}
+
+			if (!defined('VIA_HTTP_SCHEME') && !$noRedirect && $referrer) {
+				$current = $_SERVER['REQUEST_URI'];
+
+				if (substr($referrer, -strlen($current)) == $current) {
+					if ($itemType == 'element') {
+						$referrer = umiHierarchy::getInstance()->getPathById($itemId);
+					} else {
+						$referrer = "/";
+					}
+				}
+
+				$module->redirect($referrer);
+			}
+
+			return $module->order($order->getId());
+		}
+
+                
                 public function deliveryListCustom($template = 'onestep') {
                         $module = $this->module;
                         $order = $module->getBasketOrder(!in_array($mode, array('put', 'remove')));
