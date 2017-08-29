@@ -11,7 +11,7 @@ $FORMS['reflection_block'] = <<<END
 END;
 
 $FORMS['reflection_group'] = <<<END
-
+3456789
 <hr />
 <b>%title% (%name%)</b><br />
 

@@ -59,6 +59,15 @@
     </div>
 </div>
 
+<div id="login" class="popup" style="display: none">
+    <div class="popup__wrapper popup__wrapper-cart">
+            <span class="title"><span class="title__pos">Вход на сайт</span></span>
+            <div class="popup__wrapper__content">
+                %users auth()%
+            </div>
+    </div>
+</div>
+
 <div id="thank" class="popup" style="display: none">
     <div class="popup__wrapper popup__wrapper-thank">
         

@@ -1,4 +1,6 @@
 <?php
+/* Блок корзины для шага оформления заказа */
+
 $FORMS = array();
 	
 $FORMS['price_block'] = <<<END
@@ -24,9 +26,11 @@ $FORMS['order_block'] = <<<END
         </div>
         <div class="order__cart-cost">
             <span class="order__cart-total">Общая стоимость:</span>
-            <span class="order__cart-totalcost">16000 РУБ</span>
+            <span class="order__cart-totalcost">%total_original_price% РУБ</span>
+            <!--span class="order__cart-total">Скидка на заказ:</span>
+            <span class="order__cart-totalcost">%discount_value%</span-->
             <span class="order__cart-total">Итог: </span>
-            <span class="order__cart-totalprice">16800 РУБ</span>
+            <span class="order__cart-totalprice">%total_price% РУБ</span>
         </div>
     </div>
 END;
@@ -37,8 +41,8 @@ $FORMS['order_item'] = <<<END
                 %custom makeThumbnail(%data getProperty(%element_id%, 'izobrazhenie_1', 'izobrazhenie')%, 70, 70,'default', 0, 0)%
             </span>
             <span class="order__cart-right">
-                <span class="order__cart-name">%name%</span>
-                <span class="order__cart-price">1835 РУБ</span>
+                <span class="order__cart-name">%name% x %amount% шт</span>
+                <span class="order__cart-price">%total-price%</span>
             </span>
         </a>
 END;

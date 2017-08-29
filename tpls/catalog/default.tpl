@@ -143,11 +143,12 @@ $FORMS['view_block'] = <<<END
             <div class="product__color">
                %data getProperty(%id%,'colors','colors')%
             </div>
+            
             <div class="product__size">
-                %data getProperty(%id%,'size','default')%
+                %data getProperty(%id%,'size','optionsFld')%
             </div>
             <div class="product__age">
-                %data getProperty(%id%,'age','default')%
+                %data getProperty(%id%,'age','optionsFld')%
             </div>
          </div>
          <div class="product__price">

@@ -2,36 +2,40 @@
 
 $FORMS = Array();
 
+$FORMS['profile_page_menu'] = <<<END
+<aside class="page__bar">
+    <div class="bar">
+        <div class="bar__top">
+            <div class="bar__inner">
+                <span class="bar__inner-title">МОИ ДАННЫЕ</span>
+                <ul class="bar__inner-list">
+                    <li class="bar__inner-item"><a href="/users/profile/" class="bar__inner-link %users isActiveProfilePage('profile')%">Личная информация</a></li>
+                    <li class="bar__inner-item"><a href="/users/adress/" class="bar__inner-link %users isActiveProfilePage('adress')%">Адреса доставки</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bar__bottom">
+            <div class="bar__inner">
+                <span class="bar__inner-title">ЗАКАЗЫ</span>
+                <ul class="bar__inner-list">
+                    <li class="bar__inner-item"><a href="/users/orders/" class="bar__inner-link %users isActiveProfilePage('orders')%">История заказов</a></li>
+                    <li class="bar__inner-item"><a href="/users/orderState/" class="bar__inner-link %users isActiveProfilePage('orderState')%">Состояние заказа</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+END;
+
 $FORMS['profile_block'] = <<<END
             <div class="personal">
                 <div class="page">
-                    <aside class="page__bar">
-                        <div class="bar">
-                            <div class="bar__top">
-                                <div class="bar__inner">
-                                <span class="bar__inner-title">МОИ ДАННЫЕ</span>
-                                <ul class="bar__inner-list">
-                                    <li class="bar__inner-item"><a href="/users/profile/" class="bar__inner-link active">Личная информация</a></li>
-                                    <li class="bar__inner-item"><a href="/emarket/customerDeliveryList/" class="bar__inner-link ">Адрес доставки</a></li>
-                                </ul>
-                            </div>
-                            </div>
-                            <div class="bar__bottom">
-                                <div class="bar__inner">
-                                    <span class="bar__inner-title">ЗАКАЗЫ</span>
-                                    <ul class="bar__inner-list">
-                                        <li class="bar__inner-item"><a href="#" class="bar__inner-link ">История заказов</a></li>
-                                        <li class="bar__inner-item"><a href="#" class="bar__inner-link ">Состояние заказа</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </aside>
+                    %users getProfilePageMenu()%
                     <div class="page__content">
                         <div class="personal-area">
                             <span class="personal-area__title">Личная информация</span>
-
-                            <div class="personal-area__form">
+                            %users settings()%
+                            <!--div class="personal-area__form">
                                 <form action="" class="form">
                                     <div class="form__row personal-area__form-row">
                                         <div class="form__col">
@@ -63,13 +67,62 @@ $FORMS['profile_block'] = <<<END
                                         </button>
                                     </div>
                                 </form>
-                            </div>
+                            </div-->
                         </div>
                     </div>
                 </div>
             </div>
-           
+END;
 
+$FORMS['adress'] = <<<END
+    <div class="personal">
+        <div class="page">
+            %users getProfilePageMenu()%
+            <div class="page__content">
+                <div class="personal-area">
+                    <span class="personal-area__title">Адреса</span>
+
+                    <div class="personal-area__form">
+                        %emarket customerDeliveryList('profile')%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+END;
+
+$FORMS['orders'] = <<<END
+    <div class="personal">
+        <div class="page">
+            %users getProfilePageMenu()%
+            <div class="page__content">
+                <div class="personal-area">
+                    <span class="personal-area__title">Заказы</span>
+
+                    <div class="personal-area__form">
+                        %emarket ordersList()%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+END;
+
+$FORMS['order_state'] = <<<END
+    <div class="personal">
+        <div class="page">
+            %users getProfilePageMenu()%
+            <div class="page__content">
+                <div class="personal-area">
+                    <span class="personal-area__title">Адреса</span>
+
+                    <div class="personal-area__form">
+                        Тут инфомрация статусах заказов
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 END;
 
 $FORMS['bad_user_block'] = <<<END

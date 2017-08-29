@@ -41,7 +41,7 @@ END;
 
 
 $FORMS['string'] = <<<END
-%title%: %value%
+%value%
 END;
 
 $FORMS['text'] = <<<END
@@ -110,7 +110,7 @@ END;
 /* Multiple property item */
 
 $FORMS['relation_mul_item'] = <<<END
-<option value="62 СМ" value="%object_id%">%value%</option>
+<option value="%object_id%">%value%</option>
 END;
 
 /* Multiple property quant */

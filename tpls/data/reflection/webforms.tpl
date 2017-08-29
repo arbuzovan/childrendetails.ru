@@ -49,6 +49,7 @@ END;
 $FORMS['reflection_block'] = <<<END
 %groups%
 %system captcha()%
+
 <table border="0" width="400">
 <tr>
 	<td style="text-align:right;padding-top:10px;">

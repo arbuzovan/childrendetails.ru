@@ -41,16 +41,7 @@
                     %custom getSiteSetting('Шапка','phone_1')%</span>
             </a>
         </div>
-        <div class="header__top-user">
-            <ul class="header__user-list">
-                <li class="header__user-item">
-                    <a href="#" class="header__user-link">Вход</a>
-                </li>
-                <li class="header__user-item">
-                    <a href="#" class="header__user-link">Регистрация</a>
-                </li>
-            </ul>
-        </div>
+        %users auth('header')%
     </div>
 </div>
 </div>
@@ -64,19 +55,7 @@
                 </a>
             </div>
             <div class="header__search">
-                <form action="" class="form form--search js-placeholder-container">
-                    <span class="form__search">
-                        <input type="text" class="input form__search-input js-search" placeholder="">
-                        <div class="placeholderDiv js-placeholderDiv">
-                            %custom getPlaceholderFromSettings()%
-                        </div>
-                        <button type="submit" class="form__btn-icon">
-                            <svg class="form__icon">
-                            <use xlink:href="#search"></use>
-                            </svg>
-                        </button>
-                    </span>
-                </form>
+                %search insert_form()%
             </div>
             <div class="header__middle-right">
                 %custom getSiteSocialsNeworkSetting('Шапка','socials_net','social_networks_header')%
