@@ -101,8 +101,8 @@ END;
 
 $FORMS['relation_mul_block'] = <<<END
 <span class="product__title">%title%</span>
-<select name="" id="" class="js-select-%name%">
-    <option label="Выберите %title%" value=""></option>
+<select name="options[%name%]" id="" class="js-select-%name%">
+    <option label="Выберите %title%" value="0">Выберите %title%</option>
     %items%
 </select>
 END;
