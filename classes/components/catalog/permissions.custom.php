@@ -17,7 +17,8 @@
                     'setOrderDirection',
                     'getOrderFieldName',
                     'getisAscDirection',
-                    'isOrderedValue'
+                    'isOrderedValue',
+                    'getParentCategoryId'
                 ]
 	];
 ?>
