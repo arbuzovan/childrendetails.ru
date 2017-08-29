@@ -123,6 +123,11 @@
                     }
                 }
                 
+                /**
+                 * Функция возвращает selected если сортировка произведена по переданному значению
+                 * @param type $param
+                 * @return boolean|string
+                 */
                 public function isOrderedValue($param) {
                     if(empty($param)){
                         return false;
@@ -141,6 +146,20 @@
                     }else{
                         return false;
                     }
+                }
+                
+                /**
+                 * Возвращаем ID родительской страницы
+                 * @param type $elementId
+                 * @return string
+                 */
+                public function getParentCategoryId($elementId = false){
+                    $hierarchy = umiHierarchy::getInstance();
+                    if(!$elementId){
+                        return false;
+                    }
+                    $parentPageId = $hierarchy->getParent($elementId);
+                    return $parentPageId;
                 }
 	}
 ?>
