@@ -113,19 +113,23 @@ $FORMS['view_block'] = <<<END
         <div class="product__slider-navlist js-product-slider-nav">
 
                 <div class="product__slider-navitem">
-                    <img src="%data getProperty(%id%, 'izobrazhenie_1', 'izobrazhenie')%" alt="">
+                    %custom makeThumbnail(%data getProperty(%id%, 'izobrazhenie_1', 'izobrazhenie')%, auto, 170,'default', 0, 0)%
+                    <!--img src="%data getProperty(%id%, 'izobrazhenie_1', 'izobrazhenie')%" alt=""-->
                 </div>
 
                 <div class="product__slider-navitem">
-                    <img src="%data getProperty(%id%, 'izobrazhenie_2', 'izobrazhenie')%" alt="">
+                    <!img src="%data getProperty(%id%, 'izobrazhenie_2', 'izobrazhenie')%" alt=""-->
+                    %custom makeThumbnail(%data getProperty(%id%, 'izobrazhenie_2', 'izobrazhenie')%, auto, 170,'default', 0, 0)%
                 </div>
 
                 <div class="product__slider-navitem">
-                    <img src="%data getProperty(%id%, 'izobrazhenie_3', 'izobrazhenie')%" alt="">
+                    <!img src="%data getProperty(%id%, 'izobrazhenie_3', 'izobrazhenie')%" alt=""-->
+                    %custom makeThumbnail(%data getProperty(%id%, 'izobrazhenie_3', 'izobrazhenie')%, auto, 170,'default', 0, 0)%
                 </div>
 
                 <div class="product__slider-navitem">
-                    <img src="%data getProperty(%id%, 'izobrazhenie_4', 'izobrazhenie')%" alt="">
+                    <!--img src="%data getProperty(%id%, 'izobrazhenie_4', 'izobrazhenie')%" alt=""-->
+                    %custom makeThumbnail(%data getProperty(%id%, 'izobrazhenie_4', 'izobrazhenie')%, auto, 170,'default', 0, 0)%
                 </div>
 
         </div>
