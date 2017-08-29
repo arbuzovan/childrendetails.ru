@@ -3,62 +3,61 @@
 $FORMS = Array();
 
 $FORMS['registrate_block'] = <<<REGISTRATE
-
+%system listErrorMessages()%
 <form action="%pre_lang%/users/registrate_do/" method="post" enctype="multipart/form-data">
+    <div class="personal-register">
+        <div class="personal-register__form">
+            <form action="" class="form">
+                <div class="form__row personal-register__form-row">
+                    <div class="form__large">
+                        <input type="text" class="input form__input" placeholder="Логин" name="login" />
+                    </div>
+                    <div class="form__col">
+                        <input type="text" class="input form__input" name="email" placeholder="Email" />
+                    </div>
+                </div>
+                <div class="form__row personal-register__form-row">
+                    <div class="form__large">
+                        <input type="text" type="password" name="password" class="input form__input" placeholder="Пароль">
+                    </div>
+                    <div class="form__col">
+                        <input type="text" type="password" name="password_confirm" class="input form__input" placeholder="Подтверждение пароля">
+                    </div>
+                </div>
 
-<table>
-	<tr>
-		<td>
-			Логин:
-		</td>
+                <div class="form__row personal-register__form-row">
+                    <div class="form__large">
+                        %system captcha()%
+                        <!-- this field determines what template will be used for e-mail sending -->
+                        <input type="hidden" name="template" value="default" />
 
-		<td>
-			<input type="text" name="login" />
-		</td>
-	</tr>
-
-	<tr>
-		<td>
-			Пароль:
-		</td>
-
-		<td>
-			<input type="password" name="password" value="" />
-		</td>
-	</tr>
-
-	<tr>
-		<td>
-			Подтверждение пароля:
-		</td>
-
-		<td>
-			<input type="password" name="password_confirm" value="" />
-		</td>
-	</tr>
-
-
-	<tr>
-		<td>
-			E-mail:
-		</td>
-
-		<td>
-			<input type="text" name="email" value="" />
-		</td>
-	</tr>
-
-	%eshop discountCardEditForm('default')%
-</table>
-	%system captcha()%
-<!-- this field determines what template will be used for e-mail sending -->
-<input type="hidden" name="template" value="default" />
-<p><input type="submit" value="Зарегистрироваться" /></p>
-<script type="text/javascript">
-	restoreFormData(document.getElementById('registrate'));
-</script>
-
-
+                        <script type="text/javascript">
+                                restoreFormData(document.getElementById('registrate'));
+                        </script>
+                    
+                    </div>
+                </div>
+                <div class="form__row personal-register__form-row">
+                        <div class="form__large">
+                        
+                        </div>
+                        <div class="form__col">
+                            <div class="ordering__bottom">
+                                <span class="ordering__btn-true">
+                                    <a href="#" class="ordering__btn-true">
+                                        <svg class="btn__transparent-icon btn__transparent-icon--left">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#success"></use>
+                                        </svg>
+                                    </a>
+                                </span>
+                                <span class="ordering__btn-true">
+                                    <input type="submit" class="btn btn__black  bold" value="Зарегистрироваться">
+                                </span>
+                            </div>
+                        </div>
+                </div>
+        </div>
+    </div>
 </form>
 
 REGISTRATE;
@@ -68,67 +67,48 @@ REGISTRATE;
 $FORMS['settings_block'] = <<<REGISTRATE
 
 <form action="%pre_lang%/users/settings_do/" method="post" enctype="multipart/form-data">
-	<input type="hidden" name="csrf" value="%csrf%" />
-
-	<table cellspacing="1" cellpadding="1" width="100%" border="0">
-	<tr>
-		<td>
-			Логин:
-		</td>
-
-		<td>
-			<input type="text" value="%login%" disabled="disabled" style="color:#444;" />
-		</td>
-	</tr>
-
-	<tr>
-		<td>
-			Пароль:
-		</td>
-
-		<td>
-			<input type="password" name="password" value="" />
-		</td>
-	</tr>
-
-	<tr>
-		<td>
-			Подтвердите пароль:
-		</td>
-
-		<td>
-			<input type="password" name="password_confirm" value="" />
-		</td>
-	</tr>
-
-
-	<tr>
-		<td>
-			E-mail:
-		</td>
-
-		<td>
-			<input type="text" name="email" value="%e-mail%" />
-		</td>
-	</tr>
-
-	<tr>
-		<td colspan="2" align="right">
-			<br /><br />
-			<input type="submit" value="Сохранить изменения" />	
-		</td>
-	</tr>
-</form>	
-	<tr>
-		<td colspan="2">
-		 	%blogs20 editUserBlogs()%	
-		</td>
-	</tr>
-
-</table>
-
-
-
+    <div class="personal-settings">
+        <div class="personal-settings__form">
+            <div class="form__row personal-settings__form-row">
+                <div class="form__col">
+                    <input type="text" disabled="disabled" value="%login%" class="input form__input" placeholder="Логин" name="login" />
+                </div>
+                
+                <div class="form__col">
+                    <input type="text" class="input form__input" placeholder="E-mail" name="email" value="%e-mail%" />
+                </div>
+            </div>
+            
+            <div class="form__row personal-settings__form-row">
+                <div class="form__col">
+                    <input type="password" class="input form__input" name="password" value="" placeholder="Пароль" />
+                </div>
+                
+                <div class="form__col">
+                    <input type="password" class="input form__input" name="password_confirm" value="" placeholder="Подтвердите пароль" />
+                </div>
+            </div>
+            
+            <div class="form__row personal-settings__form-row">
+                <div class="form__col">
+                    <div class="ordering__bottom">
+                        <span class="ordering__btn-true">
+                            <a href="#" class="ordering__btn-true">
+                                <svg class="btn__transparent-icon btn__transparent-icon--left">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#success"></use>
+                                </svg>
+                            </a>
+                        </span>
+                        <span class="ordering__btn-true">
+                            <input type="submit" class="btn btn__black  bold" value="Сохранить изменения">
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</form>
 REGISTRATE;
 
 
