@@ -35,12 +35,12 @@
             <div class="popups__form">
                 <form action="" class="form">
                     <div class="form__item">
-                        <input type="text" class="input form__input" placeholder="Ваше имя">
+                        <input id="oneclick__name" type="text" class="input form__input" placeholder="Ваше имя">
                     </div>
                     <div class="form__item">
-                        <input type="tel" class="input form__input" placeholder="Ваш телефон">
+                        <input id="oneclick__phone" type="tel" class="input form__input" placeholder="Ваш телефон">
                     </div>
-                    <a href="#" class="btn btn__black js-popups-true">Отправить</a>
+                    <a href="#" class="btn btn__black js-popups-oneclick" rel='%id%'>Отправить</a>
                 </form>
             </div>
         

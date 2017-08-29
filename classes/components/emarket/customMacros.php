@@ -262,5 +262,54 @@
                             $data->saveEditedObjectWithIgnorePermissions($addressId, true, true);
                     }
                 }
-	}
+	
+                public function oneClickOrder() {
+                    $itemID = getRequest('id');
+                    $clientName = getRequest('name');
+                    $clientPhone = getRequest('phone');
+                            
+                    $answer = array();
+                    $answer['status'] = 'error';
+                    
+                    if(empty($clientName)){
+                        $answer['message'] = 'Пожалуйста, укажите Ваше имя';
+                        $answer['fldID'] = 'oneclick__name';
+                        echo json_encode($answer);
+                        exit;
+                    }
+                    
+                    if(empty($clientPhone)){
+                        $answer['message'] = 'Пожалуйста, укажите Ваше номер телефона для связи';
+                        $answer['fldID'] = 'oneclick__phone';
+                        echo json_encode($answer);
+                        exit;
+                    }
+                    
+                    $hierarchy = umiHierarchy::getInstance();
+                    $page = $hierarchy->getElement($itemID);
+
+                    $adminEmail = regedit::getInstance()->getVal("//modules/emarket/manager-email/1");
+                    $fromEmail = regedit::getInstance()->getVal("//modules/emarket/from-email/1");
+                    
+                    $content = "";
+                    $content .= "Пользователь: ".htmlspecialchars($clientName)."<br>";
+                    $content .= "Номер телефона: ".htmlspecialchars($clientPhone)."<br>";
+                    $content .= "Товар: ".$page->getName();
+                    
+                    $letter = new umiMail();
+                    $letter->addRecipient($adminEmail);
+                    $letter->setFrom($fromEmail);
+                    $letter->setSubject('Заказ товара в 1 клик');
+                    $letter->setContent($content);
+                    $letter->commit();
+                    $letter->send();
+                    
+                    $answer['status'] = 'ok';
+                    $answer['message'] = false;
+                    
+                    echo json_encode($answer);
+                    exit;
+                }
+                
+        }
 ?>
