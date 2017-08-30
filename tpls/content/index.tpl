@@ -74,9 +74,9 @@
     <div class="row">
         <div class="col col--33">
             <div class="category-list">
-                <a href=" %content get_page_url(4)%" class="category-list__item">
+                <a href="%content get_page_url(%custom getSiteSetting('Шапка','category_1',0,1)%)%" class="category-list__item">
                     <span class="category-list__top">
-                        <img src="/pic/category-list/img01.jpg" alt="img01">
+                        <img src="%custom getSiteSetting('Шапка','category_1_image')%" alt="img01">
                     </span>
                     <span class="category-list__bottom">
                         <span class="title category-list__title"><span class="title__pos">Для мальчиков</span></span>
@@ -86,9 +86,9 @@
         </div>
         <div class="col col--33">
             <div class="category-list">
-                <a href="%content get_page_url(3)%" class="category-list__item">
+                <a href="%content get_page_url(%custom getSiteSetting('Шапка','category_2',0,1)%)%" class="category-list__item">
                     <span class="category-list__top">
-                        <img src="/pic/category-list/img02.jpg" alt="img02">
+                        <img src="%custom getSiteSetting('Шапка','category_2_image')%" alt="img02">
                     </span>
                     <span class="category-list__bottom">
                         <span class="title category-list__title"><span class="title__pos">Для малышей</span></span>
@@ -98,9 +98,9 @@
         </div>
         <div class="col col--33">
             <div class="category-list">
-                <a href="%content get_page_url(5)%" class="category-list__item">
+                <a href="%content get_page_url(%custom getSiteSetting('Шапка','category_3',0,1)%)%" class="category-list__item">
                     <span class="category-list__top">
-                        <img src="/pic/category-list/img03.jpg" alt="img03">
+                        <img src="%custom getSiteSetting('Шапка','category_3_image')%" alt="img03">
                     </span>
                     <span class="category-list__bottom">
                         <span class="title category-list__title"><span class="title__pos">Для девочек</span></span>
@@ -114,7 +114,7 @@
     <div class="row">
         <div class="col col--50">
             <div class="category-box">
-                <a href="%content get_page_url(9)%" class=" category-box__inner category-box__inner--530" style="background-image: url(/pic/category/img01.jpg)">
+                <a href="%content get_page_url(%custom getSiteSetting('Шапка','category_4',0,1)%)%" class=" category-box__inner category-box__inner--530" style="background-image: url(%custom getSiteSetting('Шапка','category_4_image')%)">
                     <span class="category-box__text">
                         <span class="category-box__title">Коляски и аксессуары</span>
                         <span class="btn btn__transparent btn__transparent--white">подробнее</span>
@@ -124,7 +124,7 @@
         </div>
 <div class="col col--50">
     <div class="category-box">
-        <a href="%content get_page_url(6)%" class=" category-box__inner category-box__inner--250" style="background-image: url(/pic/category/img02.jpg)">
+        <a href="%content get_page_url(%custom getSiteSetting('Шапка','category_5',0,1)%)%" class=" category-box__inner category-box__inner--250" style="background-image: url(%custom getSiteSetting('Шапка','category_5_image')%)">
             <span class="category-box__text">
                 <span class="category-box__title">Сумки и рюкзаки</span>
                 <span class="btn btn__transparent btn__transparent--white">подробнее</span>
@@ -132,7 +132,7 @@
         </a>
     </div>
     <div class="category-box">
-        <a href="%content get_page_url(8)%" class=" category-box__inner category-box__inner--250" style="background-image: url(/pic/category/img03.jpg)">
+        <a href="%content get_page_url(%custom getSiteSetting('Шапка','category_6',0,1)%)%" class=" category-box__inner category-box__inner--250" style="background-image: url(%custom getSiteSetting('Шапка','category_6_image')%)">
             <span class="category-box__text">
                 <span class="category-box__title">Игрушки</span>
                 <span class="btn btn__transparent btn__transparent--white">подробнее</span>
@@ -142,7 +142,7 @@
 </div>
 <div class="col col--100">
     <div class="category-box">
-        <a href="%content get_page_url(7)%" class=" category-box__inner category-box__inner--250" style="background-image: url(/pic/category/img04.jpg)">
+        <a href="%content get_page_url(%custom getSiteSetting('Шапка','category_7',0,1)%)%" class=" category-box__inner category-box__inner--250" style="background-image: url(%custom getSiteSetting('Шапка','category_7_image')%)">
             <span class="category-box__text">
                 <span class="category-box__title">Домашняя коллекция</span>
                 <span class="btn btn__transparent btn__transparent--white">подробнее</span>

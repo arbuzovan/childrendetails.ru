@@ -197,7 +197,7 @@
                  * @return boolean
                  * @throws publicException
                  */
-                public function getSiteSetting($settingName = false, $paramName = false, $alltrim = false){
+                public function getSiteSetting($settingName = false, $paramName = false, $alltrim = false, $isPage = false){
                     if(!$settingName || empty($settingName)){
                         return false;
                     }
@@ -215,14 +215,19 @@
 
                     $value = umiObjectsCollection::getInstance()->getObject($settingsId)->getValue($paramName);
 
+                    if($isPage){
+                        $page = $value[0];
+                        return $page->id;
+                    }
+                    
                     if($alltrim){
                         $value = str_replace(' ','',$value);
                     }
-
+                    
                     if(empty($value)){
                         return false;
                     }
-
+                    
                     return $value;
                 }
 
