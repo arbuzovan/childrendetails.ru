@@ -32,6 +32,7 @@
 </div>
 <div class="header__top-right">
     <div class="header__top-row">
+        %users auth('header')%
         <div class="header__top-tel">
             <a href="tel:%custom getSiteSetting('Шапка','phone_1', true)%" class="header__top-link">
                 <svg class="header__top-icon">
@@ -41,7 +42,6 @@
                     %custom getSiteSetting('Шапка','phone_1')%</span>
             </a>
         </div>
-        %users auth('header')%
     </div>
 </div>
 </div>

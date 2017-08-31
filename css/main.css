@@ -3514,18 +3514,18 @@ select {
   .header__top-left {
     display: inline-block;
     vertical-align: middle;
-    width: calc(100% - 372px); }
+    width: calc(100% - 390px); }
   .header__top-right {
     display: inline-block;
     vertical-align: middle;
-    max-width: 341px; }
+    max-width: 380px; }
   .header__top-row {
     letter-spacing: -.35em; }
   .header__top-tel {
     display: inline-block;
     vertical-align: middle;
     letter-spacing: 0;
-    margin-right: 18px;
+    margin-right: 15px;
     max-width: 146px; }
   .header__top-user {
     display: inline-block;
@@ -5190,4 +5190,8 @@ select {
     margin-bottom: 12px;
     border: 1px solid #e6e8e9;
     
+}
+
+.header__top-user{
+    float: right;
 }
