@@ -374,7 +374,45 @@
                     exit;
                 }
 
-
+                /**
+                 * Функция проверки статуса заказа
+                 */
+                public function getOrderState(){
+                    $permissions = permissionsCollection::getInstance();
+                    $userId =  $permissions->getUserId();
+                    $orderNumber = getRequest('orderNumber');
+                    
+                    $answer = array();
+                    $answer['status'] = 'error';
+                    
+                    if(empty($orderNumber)){
+                        $answer['message'] = 'Не указан номер заказа';
+                        echo json_encode($answer);
+                        exit;
+                    }
+                    
+                    $orders = new selector('objects');
+                    $orders->types('object-type')->name('emarket', 'order');
+                    $orders->where('number')->equals($orderNumber);
+                    $orders->where('customer_id')->equals($userId);
+                    
+                    if($orders->length <= 0){
+                        $answer['message'] = 'Не найден заказ с указанным номером';
+                        echo json_encode($answer);
+                        exit;                        
+                    }
+                    
+                    $oCollections = umiObjectsCollection::getInstance();
+                    
+                    foreach ($orders as $order){
+                        $orderState = $oCollections->getObject($order->status_id)->name;
+                    }
+                    
+                    $answer['status'] = 'ok';
+                    $answer['message'] = $orderState;
+                    echo json_encode($answer);
+                    exit;
+                }
                 
         }
 ?>

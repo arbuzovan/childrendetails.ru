@@ -114,10 +114,36 @@ $FORMS['order_state'] = <<<END
             %users getProfilePageMenu()%
             <div class="page__content">
                 <div class="personal-area">
-                    <span class="personal-area__title">Адреса</span>
-
                     <div class="personal-area__form">
-                        Тут инфомрация статусах заказов
+
+            <div class="form__row personal-settings__form-row">
+                
+                <div class="form__col">
+                    <input class="input form__input" id="orderNumber" placeholder="Номер заказа" name="orderNumber" value="" type="text">
+                </div>
+                <div class="form__col">
+                    <span class="profile__orderState"></span>
+                </div>
+            </div>
+            
+            <div class="form__row personal-settings__form-row">
+                <div class="form__col">
+                    <div class="ordering__bottom">
+                        <span class="ordering__btn-true">
+                            <a href="#" class="ordering__btn-true">
+                                <svg class="btn__transparent-icon btn__transparent-icon--left">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#success"/>
+                                </svg>
+                            </a>
+                        </span>
+                        <span class="ordering__btn-true">
+                            <input class="btn btn__black  bold orderStateCheckBtn" value="Проверить" type="submit">
+                        </span>
+                    </div>
+                </div>
+            </div>
+                    
+                    
                     </div>
                 </div>
             </div>

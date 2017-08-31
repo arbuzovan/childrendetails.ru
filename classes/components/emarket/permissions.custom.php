@@ -16,7 +16,8 @@
                         'getPersonalReccomendation',
                         'addNewAdress',
                         'oneClickOrder',
-                        'backCallRequest'
+                        'backCallRequest',
+                        'getOrderState'
 		]
 	];
 ?>
