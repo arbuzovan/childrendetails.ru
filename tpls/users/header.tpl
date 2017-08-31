@@ -20,7 +20,7 @@ $FORMS['logged'] = <<<END
 <div class="header__top-user">
     <ul class="header__user-list">
         <li class="header__user-item">
-            <a href="%pre_lang%/users/profile/">%user_name%</a>
+            <a href="%pre_lang%/users/profile/">Личный кабинет</a>
         </li>
         <li class="header__user-item">
             <a href="%pre_lang%/users/logout/">Выйти</a>
