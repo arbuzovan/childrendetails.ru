@@ -16,7 +16,7 @@ END;
 
 
 $FORMS['category_block_empty'] = <<<END
-
+    <noindex>%custom getSiteSetting('Шапка','empty_categroy_text')%</noindex>
 END;
 
 
