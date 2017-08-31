@@ -46,23 +46,23 @@
     <div class="writetous">
     <span class="title"><span class="title__pos">Напишите нам</span></span>
     <div class="writetous__form">
-        <form action="" class="form">
+        <form action="" class="form contact_form" >
             <div class="form__row">
                 <div class="form__col">
                     <span class="form__item">
-                        <input type="text" class="form__input input" placeholder="Ваше имя">
+                        <input type="text" id="contact__name" class="form__input input" placeholder="Ваше имя">
                     </span>
                     <span class="form__item">
-                        <input type="text" class="form__input input" placeholder="Ваш телефон">
+                        <input type="text" id="contact__phone" class="form__input input" placeholder="Ваш телефон">
                     </span>
                 </div>
                 <div class="form__col">
                     <div class="form__item">
-                        <textarea name="" id="" cols="30" rows="10" class="textarea form__textarea" placeholder="Ваше сообщение"></textarea>
+                        <textarea name="" id="contact__comment" id="" cols="30" rows="10" class="textarea form__textarea" placeholder="Ваше сообщение"></textarea>
                     </div>
                 </div>
             </div>
-            <button class="btn btn__black" type="submit">Отправить</button>
+            <button class="btn btn__black contact_form_btn" type="submit">Отправить</button>
         </form>
     </div>
 </div>

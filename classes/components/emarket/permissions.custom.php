@@ -17,7 +17,8 @@
                         'addNewAdress',
                         'oneClickOrder',
                         'backCallRequest',
-                        'getOrderState'
+                        'getOrderState',
+                        'contactFormRequest'
 		]
 	];
 ?>
