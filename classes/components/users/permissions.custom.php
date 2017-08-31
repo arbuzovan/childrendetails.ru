@@ -11,7 +11,8 @@
                         'adress',
                         'orders',
                         'orderState',
-                        'getAdressData'
+                        'getAdressData',
+                        'setAdressData'
 		]
 	];
 ?>

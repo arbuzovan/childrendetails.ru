@@ -84,5 +84,49 @@
                     
                     exit;
                 }
+                
+                public function setAdressData(){
+                    $oCollection = umiObjectsCollection::getInstance();
+                    $permissions = permissionsCollection::getInstance();
+                    $userId = $permissions->getUserId();
+                    
+                    $typesCollection = umiObjectTypesCollection::getInstance();
+                    $typeId = $typesCollection->getBaseType('emarket', 'delivery_address');
+                    $objectsCollection = umiObjectsCollection::getInstance();
+                    
+                    $userObject = $objectsCollection->getObject($userId);
+                    
+                    $id = getRequest('id');
+                    $city = getRequest('city');
+                    $index = getRequest('index');
+                    $street = getRequest('street');
+                    $house = getRequest('house');
+                    
+                    
+                    if($id == 'new-address'){
+                        $id = $objectsCollection->addObject("Adress for customer #".$userId, $typeId);
+                        $userDeliveryAdresses = $userObject->delivery_addresses;
+                        $userDeliveryAdresses[] = $id;
+                        $userObject->setValue('delivery_addresses', $userDeliveryAdresses);
+                    }
+                    
+                    $adressObject = $oCollection->getObject($id);
+                    $adressObject->city = $city;
+                    $adressObject->index = $index;
+                    $adressObject->street = $street;
+                    $adressObject->house = $house;
+
+                    
+                    $adressObject->commit();
+                    
+                    setcookie('ADRESS_ID',$id); // Ставим куку
+                    
+                    $answer = array();
+                    $answer['status'] = 'ok';
+                    
+                    echo json_encode($answer);
+                    exit;
+                    
+                }
 	}
 ?>
