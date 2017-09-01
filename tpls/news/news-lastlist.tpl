@@ -13,7 +13,9 @@ END;
 
 $FORMS['lastlist_item'] = <<<END
       <div class="slider__item">
-        <a href="%link%"><img src="%anons_pic%" alt="%header%"></a>
+        <a href="%link%">
+            %custom makeThumbnail(%anons_pic%, 250, 250,'default', 0, 0, %header%)%
+        </a>
 </div>
 
 END;
