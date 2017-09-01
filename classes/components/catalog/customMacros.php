@@ -32,7 +32,7 @@
                         return $count.' видов продукции';
                     }
                     
-                    return false;
+                    return '&nbsp';
                 }
                 
                 /**
@@ -58,7 +58,7 @@
                     if($count > 0){
                         return $count.' наименований';
                     }
-                    return false;
+                    return '&nbsp';
                 }
                 
                 /**
