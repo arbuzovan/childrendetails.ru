@@ -40,6 +40,8 @@
 			$itemType = $itemType ? $itemType : getRequest('param1');
 			$itemId = (int) ($itemId ? $itemId : getRequest('param2'));
 			$amount = (int) getRequest('amount');
+			$modify = (bool) getRequest('modify');
+                        
 			$options = getRequest('options');
                         
 			switch ($mode) {
@@ -90,7 +92,12 @@
 
 					$oldAmount = $orderItem->getAmount();
 					//$amount = $amount ? $amount : ($oldAmount + 1);
-					$amount = $oldAmount + (int)$amount;
+                                        if($modify){
+                                            $amount = (int)$amount;
+                                        }else{
+                                            $amount = $oldAmount + (int)$amount;
+                                        }
+					
 					$orderItem->setAmount($amount);
 					$orderItem->refresh();
 					$newAmount = $orderItem->getAmount();
@@ -474,6 +481,97 @@
                     echo json_encode($answer);
                     exit;
                 }
+                
+		/**
+		 * Применяет опции к товару в заказ и возвращает его
+		 * @param order $order заказ
+		 * @param orderItem $orderItem товар в заказе
+		 * @param array $options данные опций
+		 * @param bool $isNewElement новый ли товар модифицируется
+		 * @param int $itemId идентификатор товара
+		 * @return null|optionedOrderItem|orderItem
+		 * @throws publicException
+		 */
+		public function appendOption(order $order, orderItem $orderItem, array $options, $isNewElement, $itemId) {
+			$orderItems = $order->getItems();
+			$currentProduct = $orderItem->getItemElement();
+
+			if (!$currentProduct instanceof iUmiHierarchyElement) {
+				throw new publicException("Wrong current item");
+			}
+
+			/**
+			 * @var iUmiHierarchyElement|iUmiEntinty $currentProduct
+			 */
+			foreach ($orderItems as $tOrderItem) {
+				if (!$tOrderItem instanceOf optionedOrderItem) {
+					$itemOptions = null;
+					$tOrderItem = null;
+					continue;
+				}
+
+				$itemOptions = $tOrderItem->getOptions();
+
+				if (sizeof($itemOptions) != sizeof($options)) {
+					$itemOptions = null;
+					$tOrderItem = null;
+					continue;
+				}
+
+				$itemProduct = $tOrderItem->getItemElement();
+
+				if (!$itemProduct instanceof iUmiHierarchyElement) {
+					$itemOptions = null;
+					$tOrderItem = null;
+					continue;
+				}
+
+				/**
+				 * @var iUmiHierarchyElement|iUmiEntinty $itemProduct
+				 */
+				if ($itemProduct->getId() != $currentProduct->getId()) {
+					$itemOptions = null;
+					$tOrderItem = null;
+					continue;
+				}
+
+				foreach ($options as $optionName => $optionId) {
+					$itemOption = getArrayKey($itemOptions, $optionName);
+
+					if (getArrayKey($itemOption, 'option-id') != $optionId) {
+						$tOrderItem = null;
+						continue 2;
+					}
+				}
+
+				break;
+			}
+
+			if (!isset($tOrderItem) || is_null($tOrderItem)) {
+				$tOrderItem = orderItem::create($itemId);
+				$order->appendItem($tOrderItem);
+
+				if ($isNewElement) {
+					$orderItem->remove();
+				}
+			}
+
+			if ($tOrderItem instanceof optionedOrderItem) {
+				foreach ($options as $optionName => $optionId) {
+					if ($optionId) {
+						$tOrderItem->appendOption($optionName, $optionId);
+					} else {
+						$tOrderItem->removeOption($optionName);
+					}
+				}
+			}
+
+			if ($tOrderItem) {
+				$orderItem = $tOrderItem;
+			}
+
+			return $orderItem;
+		}
                 
         }
 ?>

@@ -100,7 +100,7 @@ $FORMS['order_item'] = <<<END
                    <use xlink:href="#button_minus"></use>
                 </svg>
              </a>
-             <input type="text" class="spinner__input js-spinner-input" value="%amount%">
+             <input type="text" class="spinner__input js-spinner-input cart_input_value" value="%amount%" rel="%element_id%">
              <a href="#" title="" class="spinner__trigger spinner__trigger--plus js-spinner-plus">
                 <svg class="icon-plus spinner__trigger-icon">
                    <use xlink:href="#button_plus"></use>
