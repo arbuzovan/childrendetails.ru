@@ -47,29 +47,9 @@ $FORMS['order_block'] = <<<END
    </div>
 </div>
 
-<!-- персональные реккомендации.
+<span class="title"><span class="title__pos">Персональные рекомендации</span></span>
+%emarket personalCartRecomendations()%
 
-<div class="slider-four">
-   <span class="title"><span class="title__pos">Персональные рекомендации</span></span>
-   <div class="slider-four__list js-slider">
-      <div class="slider-four__item">
-         <div class="slider-four__holder">
-            <a href="pic/slider_four_scroll/img09.png" class="slider-four__img">
-            <img src="pic/slider_four_scroll/img09.png" alt="img09">
-            </a>
-            <a href="#" class="slider-four__title js-height">Комплект Babystyle Защитный оранжевый</a>
-            <a href="#" class="slider-four__category ">Elodie Details</a>
-            <span class="slider-four__price">
-            <span class="slider-four__price-now">8660 РУБ</span>
-            </span>
-         </div>
-      </div>
-
-      </div>
-   </div>
-</div>
-
--->
 END;
 
 $FORMS['order_item'] = <<<END

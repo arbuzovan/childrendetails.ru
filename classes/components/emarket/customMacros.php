@@ -233,18 +233,6 @@
 			return emarket::parseTemplate($purchasing_one_step, $result);
 		}
                 
-                public function getPersonalReccomendation($template = 'default', $limit = 10){
-                    $order = $module->getBasketOrder();
-                    $orderItems = $order->getItems();
-                    
-                    $itemsInCartReccomendationIds = array();
-                    
-                    foreach ($orderItems as $orderItem){
-                        
-                        $itemsInCartReccomendationIds = '';
-                    }
-                }
-                
                 public function addNewAdress(){
                     $addressId = getRequest($addressId);
                     
@@ -572,6 +560,76 @@
 
 			return $orderItem;
 		}
+                
+                public function personalCartRecomendations($limit = false, $template = 'cartReccomendations'){
+                    
+                    if (!$template) {
+                        $template = "default";
+                    }
+
+                    $module = $this->module;
+                    $umiHierarchy = umiHierarchy::getInstance();
+                    
+                    list(
+                            $itemsTemplate,
+                            $emptyItemsTemplate,
+                            $itemTemplate
+                            ) = def_module::loadTemplates(
+                            'catalog/' . $template,
+                            'objects_block',
+                            'objects_block_empty',
+                            'objects_block_line'
+                    );
+                    
+                    $offset = 0;    // Начальный элемент для 'отреза'
+                    
+                    $order = $module->getBasketOrder();
+                    $orderItems = $order->getItems();
+                    $itemsInCartReccomendations = array();
+                    
+                    foreach ($orderItems as $orderItem){
+                        $orderItemElement = $orderItem->getItemElement();
+                        foreach ($orderItemElement->getValue('s_etim_tovarom_pokupayut') as $reccItem){
+                            $itemsInCartReccomendations[$reccItem->getObjectId()] = $reccItem;
+                        }
+                    }
+                    
+                    shuffle($itemsInCartReccomendations);
+                    
+                    if(!$limit){
+                        $limit = count($itemsInCartReccomendations);
+                    }
+                    
+                    $itemsInCartReccomendations = array_slice($itemsInCartReccomendations, $offset, $limit);
+                    $items = array();
+                    $block_arr = array();
+                    
+                    foreach ($itemsInCartReccomendations as $page) {
+
+                        $pageId = $page->getId();
+
+                        $categroyId = $umiHierarchy->getParent($pageId);
+                        $categoryName = $umiHierarchy->getElement($categroyId)->getName();
+                        $categryPath = $umiHierarchy->getPathById($categroyId);
+
+                        $item = array();
+
+                        $item['attribute:id'] = $pageId;
+                        $item['attribute:alt_name'] = $page->getAltName();
+                        $item['attribute:price'] = $page->getValue('price');
+                        $item['attribute:link'] = $umiHierarchy->getPathById($pageId);
+                        $item['attribute:categry_name'] = $categoryName;
+                        $item['attribute:category_link'] = $categryPath;
+                        $item['xlink:href'] ='upage://' . $pageId;
+                        $item['node:text'] = $page->getName();
+                        $items[] = def_module::parseTemplate($itemTemplate, $item, $pageId);
+                        $umiHierarchy->unloadElement($pageId);
+                    }
+
+                    $block_arr['subnodes:lines'] = $items;
+
+                    return def_module::parseTemplate($itemsTemplate, $block_arr);
+                }
                 
         }
 ?>

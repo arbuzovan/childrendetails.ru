@@ -13,12 +13,12 @@
                         'custom_basket',
                         'one_step_order',
 			'deliveryListCustom',
-                        'getPersonalReccomendation',
                         'addNewAdress',
                         'oneClickOrder',
                         'backCallRequest',
                         'getOrderState',
-                        'contactFormRequest'
+                        'contactFormRequest',
+                        'personalCartRecomendations'
 		]
 	];
 ?>
