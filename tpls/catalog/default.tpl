@@ -156,7 +156,7 @@ $FORMS['view_block'] = <<<END
             </div>
          </div>
          <div class="product__price">
-            %emarket price(%id%,'itemCartPrice)%
+            %emarket price(%id%,'itemCartPrice')%
             <div class="spinner js-spinner" data-min="1" data-max="100">
                <a href="#" title="" class="spinner__trigger spinner__trigger--minus js-spinner-minus">
                   <svg class="icon-minus spinner__trigger-icon">

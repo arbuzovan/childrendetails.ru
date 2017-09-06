@@ -3,7 +3,7 @@ $FORMS = array();
 	
 $FORMS['price_block'] = <<<END
 <span class="product__old-price">%price-original%</span>
-<span class="product__new-price">%price-actual%</span>
+<span class="cart__price">%price-actual%</span>
 END;
 
 $FORMS['price_original'] = <<<END

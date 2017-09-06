@@ -9,11 +9,13 @@ $FORMS['price_block'] = <<<END
 END;
 
 $FORMS['price_original'] = <<<END
-    <span class="slider-four__price-old">%prefix%&nbsp;%original%&nbsp;%suffix%</span>
+<span class="cart__price"><span class="product__old-price">%prefix%&nbsp;%original%&nbsp;%suffix%</span>
+
+
 END;
 
 $FORMS['price_actual'] = <<<END
-<span class="slider-four__price-now">%prefix%&nbsp;%actual% &nbsp;%suffix%</span>
+<span class="cart__total">%prefix%&nbsp;%actual% &nbsp;%suffix%</span>
 END;
 
 
@@ -71,7 +73,7 @@ $FORMS['order_item'] = <<<END
             %options%
        </td>
        <td class="cart__cell">
-          <span class="cart__price" data-text="Цена">%emarket price(%element_id%)%</span>
+          <span class="cart__price" data-text="Цена">%emarket price(%element_id%,'itemCartPrice')%</span>
        </td>
        <td class="cart__cell">
           <div class="spinner js-spinner" data-min="1" data-max="100">
