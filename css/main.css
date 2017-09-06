@@ -3517,7 +3517,7 @@ select {
   .header__top-left {
     display: inline-block;
     vertical-align: middle;
-    width: calc(100% - 390px); }
+    width: calc(100% - 400px); }
   .header__top-right {
     display: inline-block;
     vertical-align: middle;
@@ -3529,7 +3529,7 @@ select {
     vertical-align: middle;
     letter-spacing: 0;
     margin-right: 15px;
-    max-width: 146px; }
+    max-width: 160px; }
   .header__top-user {
     display: inline-block;
     vertical-align: middle;
