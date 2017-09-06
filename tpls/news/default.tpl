@@ -15,7 +15,7 @@ END;
 
 $FORMS['lastlist_item'] = <<<END
     <div class="news__item">
-            <div class="news__image news__image--left">
+            <div class="news__image">
         <a href="%link%">
             %custom makeThumbnail(%anons_pic%, 470, 270,'default', 0, 0, %header%)%
         </a>
@@ -38,9 +38,10 @@ END;
 $FORMS['view'] = <<<END
           <div class="static-content">
                 <h1 class="title"><span class="title__pos">%h1%</span></h1>
-                <div style="text-align: justify;">
-                    %custom makeThumbnail(%publish_pic%, 300, 300,'default', 0, 0, %header%)%
-                    
+                <div  style="text-align: justify;">
+                    <div class="news__image--left">
+                        %custom makeThumbnail(%publish_pic%, 300, 300,'default', 0, 0, %header%)%
+                    </div>
                     <span class="date">%system convertDate(%publish_time%, 'd.m.Y')%</span>
                     %content%
                 </div>

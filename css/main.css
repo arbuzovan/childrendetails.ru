@@ -3907,6 +3907,19 @@ select {
   float: right;
   margin-left: 29px; }
 
+
+.news__item:nth-child(2n) .news__image{
+  float: left;
+  margin-right: 29px; 
+/*  max-width: 470px;
+  min-width: 470px;    */
+}
+
+.news__item:nth-child(2n+1) .news__image{
+  float: right;
+  margin-left: 29px; 
+}
+
 .news__inf {
   overflow: hidden;
   color: #898787;

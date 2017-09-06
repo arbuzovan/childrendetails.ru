@@ -3,6 +3,7 @@
 $FORMS = Array();
 
 $FORMS['lastlist_block'] = <<<END
+<div style="clear:both">
 <div class="slider">
 <div class="slider__list js-slider">
 %items%
