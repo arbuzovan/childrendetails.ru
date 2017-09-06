@@ -745,13 +745,15 @@ ol {
 .title {
   display: block;
   text-align: center;
+  margin-top: 15px;
   margin-bottom: 57px;
   font-size: 30px;
   line-height: 32px;
   letter-spacing: 1.5px;
   color: #1a1919;
   font-family: "Lora";
-  font-weight: normal; }
+  font-weight: normal; 
+}
   .title__pos {
     display: inline-block;
     vertical-align: top;
@@ -2848,7 +2850,8 @@ select {
     background-position: center; }
 
 .breadcrumbs {
-  padding: 14px 0; }
+  padding: 14px 0 0 0; 
+}
   .breadcrumbs__list {
     font-size: 14px;
     margin: 0;
