@@ -3900,7 +3900,7 @@ select {
   float: left;
   margin-right: 29px; 
   max-width: 470px;
-  min-width: 470px;
+  /*min-width: 470px;*/
 }
 
 .news__image--right {
