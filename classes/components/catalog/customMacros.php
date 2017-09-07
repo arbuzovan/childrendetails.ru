@@ -161,5 +161,60 @@
                     $parentPageId = $hierarchy->getParent($elementId);
                     return $parentPageId;
                 }
+                
+                public function getSiblingCategories($elementId = false, $template = 'siblingCategories') {
+                    if(!$elementId){
+                        return;
+                    }
+                    
+                    $hierarchy = umiHierarchy::getInstance();
+                    $typesCollection = umiObjectTypesCollection::getInstance();
+                    
+                    $parentPageId = $hierarchy->getParent($elementId);
+                    
+                    $typeId = $typesCollection->getBaseType('catalog', 'category'); // ID типа категории
+                    
+                    $siblingCategoriesArray = $hierarchy->getChildrenTree($parentPageId, true, true, 1);
+
+                    $result = array();
+                    foreach ($siblingCategoriesArray as $pageId => $categoryPage){
+                        if($hierarchy->getElement($pageId)->getObjectTypeId() != $typeId || $pageId == $elementId){
+                            continue;
+                        }else{
+                            $result[] = $hierarchy->getElement($pageId);
+                        }
+                    }
+                    
+                    list($itemsTemplate,$itemTemplate) = def_module::loadTemplates(
+                            'catalog/' . $template,
+                            'category_block',
+                            'category_block_line'
+                    );
+                    
+                    $items = array();
+                    $block_arr = array();
+                    
+                    foreach ($result as $page) {
+
+                        $pageId = $page->getId();
+
+                        $categoryName = $hierarchy->getElement($pageId)->getName();
+                        $categryPath = $hierarchy->getPathById($pageId);
+
+                        $item = array();
+
+                        $item['attribute:id'] = $pageId;
+                        $item['attribute:link'] = $hierarchy->getPathById($pageId);
+                        $item['attribute:categry_name'] = $categoryName;
+                        $item['attribute:category_link'] = $categryPath;
+                        $item['xlink:href'] ='upage://' . $pageId;
+                        $item['node:text'] = $page->getName();
+                        $items[] = def_module::parseTemplate($itemTemplate, $item, $pageId);
+                    }
+
+                    $block_arr['subnodes:lines'] = $items;
+
+                    return def_module::parseTemplate($itemsTemplate, $block_arr);
+                }
 	}
 ?>

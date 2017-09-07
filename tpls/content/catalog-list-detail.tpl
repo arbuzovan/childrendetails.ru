@@ -10,26 +10,7 @@
             <div class="subsection-filter subsection-filter--noradius">
                 <div class="subsection-filter__nav ">
 
-
-                    <ul class="subsection-filter__list">
-
-                        <li class="subsection-filter__item">
-                            <a href="#" class="subsection-filter__link active">держатели для пустышек</a>
-                        </li>
-
-                        <li class="subsection-filter__item">
-                            <a href="#" class="subsection-filter__link ">перчатки и варешки</a>
-                        </li>
-
-                        <li class="subsection-filter__item">
-                            <a href="#" class="subsection-filter__link ">нагрудники</a>
-                        </li>
-
-                        <li class="subsection-filter__item">
-                            <a href="#" class="subsection-filter__link ">головные уборы</a>
-                        </li>
-
-                    </ul>
+                    %catalog getSiblingCategories(%id%)%
 
                 </div>
                 <div class="subsection-filter__select subsection-filter__select--noradius">

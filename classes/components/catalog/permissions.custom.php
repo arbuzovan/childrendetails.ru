@@ -18,7 +18,8 @@
                     'getOrderFieldName',
                     'getisAscDirection',
                     'isOrderedValue',
-                    'getParentCategoryId'
+                    'getParentCategoryId',
+                    'getSiblingCategories'
                 ]
 	];
 ?>
