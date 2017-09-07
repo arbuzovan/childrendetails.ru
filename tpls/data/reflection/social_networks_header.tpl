@@ -15,7 +15,7 @@ END;
 
 $FORMS['sc_networks_item']  = <<<END
     <li class="social__item">
-        <a href="%value%" class="social__link social__link--white">
+        <a href="%value%" target="_blank" class="social__link social__link--white">
             <svg class="social__icon social__icon--white social__icon--%name%">
                 <use xlink:href="#%name%"></use>
             </svg>
