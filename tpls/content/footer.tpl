@@ -136,7 +136,7 @@
 </span>
 </div>
 <div class="footer__copyright-right">
-<a href="http://mtsite.ru/" class="footer__copyright-link">Мультисайт</a>
+    <a href="http://mtsite.ru/" class="footer__copyright-link" target="_black">Мультисайт</a>
 </div>
 </div>
 </div>
