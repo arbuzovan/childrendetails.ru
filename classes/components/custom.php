@@ -154,7 +154,7 @@
                         } else if($image->getExt() == "gif") {
                             imagegif($thumb, $path_new);
                         } else {
-                            imagejpeg($thumb, $path_new, 85);
+                            imagejpeg($thumb, $path_new, 100);
                         }
                     }
                     }

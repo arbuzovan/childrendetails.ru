@@ -45,16 +45,10 @@ $FORMS['view'] = <<<END
                     <span class="date">%system convertDate(%publish_time%, 'd.m.Y')%</span>
                     %content%
                 </div>
-        
                 %news lastlist('39','news-lastlist',10,0)%
-
             </div>
 
  %data getProperty(%id%, 'ssylka_na_tovar', 'ssylka_na_tovar')%
-
-%news related_links(%id%)%
-
-
 
 END;
 

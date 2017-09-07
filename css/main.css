@@ -3529,8 +3529,8 @@ select {
     display: inline-block;
     vertical-align: middle;
     letter-spacing: 0;
-    margin-right: 15px;
-    max-width: 160px; }
+    margin-right: 10px;
+    max-width: 165px; }
   .header__top-user {
     display: inline-block;
     vertical-align: middle;
@@ -3627,7 +3627,7 @@ select {
     vertical-align: middle;
     opacity: 0;
     visibility: hidden;
-    max-width: 124px; }
+    max-width: 135px; }
   .header__bottom-center {
     display: inline-block;
     vertical-align: middle;
@@ -3667,7 +3667,7 @@ select {
   padding: 17px 0 15px; }
 
 .header .is-sticky .header__bottom-center {
-  width: calc(100% - 237px); }
+  width: calc(100% - 250px); }
 
 .header .is-sticky .navigate__list {
   font-size: 11px;
