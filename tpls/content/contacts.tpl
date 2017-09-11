@@ -18,18 +18,7 @@
         </div>
         <div class="contact-info__item">
             <span class="contact-info__title">Мы в соц сетях:</span>
-             <div class="social">
-    <ul class="social__list">
-            <li class="social__item">
-                <a href="%custom getSiteSetting('Шапка','instagram')%" class="social__link social__link--black">
-                    <svg class="social__icon social__icon--black social__icon--instagram">
-                        <use xlink:href="#instagram"></use>
-                    </svg>
-                </a>
-            </li>
-        
-    </ul>
-</div>
+            %custom getSiteSocialsNeworkSetting('Шапка','socials_net','social_networks_darkness')%
         </div>
         <div class="contact-info__item">
             <span class="contact-info__title">Напишите нам:</span>
