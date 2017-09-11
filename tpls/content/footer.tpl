@@ -109,18 +109,14 @@
 <div class="footer__master">
 <ul class="footer__master-list">
     <li class="footer__master-item">
-        <a href="#" class="footer__master-link">
             <svg class="footer__master-icon footer__master-icon--visa">
             <use xlink:href="#card_visa"></use>
             </svg>
-        </a>
     </li>
     <li class="footer__master-item">
-        <a href="#" class="footer__master-link">
             <svg class="footer__master-icon footer__master-icon--mc">
             <use xlink:href="#card_mc"></use>
             </svg>
-        </a>
     </li>
 </ul>
 </div>
