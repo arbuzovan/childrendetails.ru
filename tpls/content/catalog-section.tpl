@@ -3,7 +3,7 @@
 <div class="wrapper">
     <div class="container">
 
-        %core navibar('default',0)%
+        %core navibar('default',1)%
 
         <div class="rubric">
             <div class="rubric__list">

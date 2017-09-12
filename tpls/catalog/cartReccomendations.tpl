@@ -14,8 +14,11 @@ $FORMS['category_block'] = <<<END
 END;
 
 $FORMS['objects_block'] = <<<END
+<span class="title"><span class="title__pos">Персональные рекомендации</span></span>
+<div class="cart-slider-reccomendation-wrapper">
 <div class="slider-four__list js-slider">
     %lines%
+</div>
 </div>
 END;
 

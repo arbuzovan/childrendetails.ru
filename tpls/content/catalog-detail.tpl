@@ -3,7 +3,7 @@
 <div class="wrapper">
     <div class="container">
 
-        %core navibar('default',0)%
+        %core navibar('default',0,1,1)%
 
         <div class="product">
             

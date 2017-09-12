@@ -16,6 +16,9 @@
     $objectTypeId = $typesCollection->getTypeIdByHierarchyTypeName('catalog', 'object');
     echo '$objectTypeId = '.$objectTypeId.'<br>';
     
+    $categoryHierarchyTypeId = 50; //catalog-category
+    $objectHierarchyTypeId = 52; //catalog-object
+    
     $hierchyElemnetIdsToChange = array();   // Массив ID для изменения
     
     $hierchyElemnetIdsToChange[] = 57;  // Мальчики -> головные уборы
@@ -39,10 +42,17 @@
         $page = $hierarchy->getElement($hierarchyElementId);
         if($page instanceof umiHierarchyElement){
             echo $page->name.' - '.$page->getObjectTypeId()."<br>";
+            echo $page->name.' - '.$page->getHierarchyType()."<br>";
             if($page->getObjectTypeId() == $objectTypeId){
                 $object = $page->getObject();
                 $object->setTypeId($categoryTypeId);
                 $object->commit();
+            }
+            
+            
+            if($page->getHierarchyType()->getId() == $objectHierarchyTypeId){
+                $page->setTypeId($categoryHierarchyTypeId);
+                $page->commit();
             }
         }
     }

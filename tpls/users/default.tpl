@@ -21,7 +21,7 @@ $FORMS['login'] = <<<END
                         <div class="form__large">
                             <input style="display:none;" type="hidden" name="from_page" value="%from_page%" />                    
                         </div>
-                        <div class="form__col">
+                        <div class="form__col form__col--fullwidth">
                             <div class="ordering__bottom">
                                 <span class="ordering__btn-true">
                                     <a href="#" class="ordering__btn-true">
@@ -51,12 +51,12 @@ END;
 
 $FORMS['logged'] = <<<END
 <div>
-    %users_welcome% %user_name%
+    %users_welcome% %user_name%<br>
 </div>
 
 <div>
     <a href="%pre_lang%/users/logout/">Выйти</a><br />
-    <a href="%pre_lang%/users/settings/">Перейти в персональный раздел</a>
+    <a href="%pre_lang%/users/profile/">Перейти в персональный раздел</a>
 </div>
 
 END;

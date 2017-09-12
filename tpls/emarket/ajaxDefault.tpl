@@ -49,7 +49,6 @@ $FORMS['order_block'] = <<<END
    </div>
 </div>
 
-%emarket personalCartRecomendations()%
 END;
 
 $FORMS['order_item'] = <<<END

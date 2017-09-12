@@ -403,4 +403,15 @@
 
 			return def_module::parseTemplate($itemsTemplate, $result);
                 }
+                
+                public function getCorePage() {
+                    $systemsNames = array('');
+                    $systemsNames['cart'] = 'Корзина товаров';
+                    $systemsNames['search_do'] = 'Поиск';
+                    $systemsNames['registrate'] = 'Регистрация';
+                    $systemsNames['login'] = 'Авторизация';
+                    $systemsNames['one_step_order'] = 'Оформление заказа';
+                    $res = '<li class="breadcrumbs__item">'.$systemsNames[cmsController::getInstance()->getCurrentMethod()].'</li>';
+                    return $res;
+                }
 	}

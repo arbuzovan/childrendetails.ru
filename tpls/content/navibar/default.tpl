@@ -12,13 +12,14 @@ $FORMS['navibar'] = <<<NAVIBAR
 	    </li>
   
 	%elements%
- 
+        %custom getCorePage()%
   </ul>
 </div>
 				
 NAVIBAR;
 
 $FORMS['navibar_empty'] = <<<NAVIBAR
+
 NAVIBAR;
 
 $FORMS['element'] = '<li class="breadcrumbs__item"><a href="%pre_lang%%link%" class="breadcrumbs__link">%text%</a> &nbsp;</li>';
