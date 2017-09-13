@@ -87,7 +87,8 @@
 <div class="footer__left">
 <div class="footer__nav">
     
-%content menu('menu-catalog-bottom', 3, 2)%
+<!-- %content menu('menu-catalog-bottom', 3, 2)% -->
+%menu draw(609,'menu-catalog-bottom')% 
  
  %content menu('menu-bottom')%
 
@@ -132,7 +133,12 @@
 </span>
 </div>
 <div class="footer__copyright-right">
-    <a href="http://mtsite.ru/" class="footer__copyright-link" target="_black">Мультисайт</a>
+    <a href="http://mtsite.ru/" class="footer__copyright-link" target="_black">
+        <div class="footer__studio-txt">Сделано в веб-студии "Мультисайт" Разработка и продвижение сайтов
+                    </div>
+        <div class="footer__studio-logo">
+                        <img src="img/logo-studio.png" alt="studio logo">
+                    </div></a>
 </div>
 </div>
 </div>
