@@ -178,17 +178,18 @@
 
                     $result = array();
                     foreach ($siblingCategoriesArray as $pageId => $categoryPage){
-                        if($hierarchy->getElement($pageId)->getObjectTypeId() != $typeId || $pageId == $elementId){
+                        if($hierarchy->getElement($pageId)->getObjectTypeId() != $typeId){
                             continue;
                         }else{
                             $result[] = $hierarchy->getElement($pageId);
                         }
                     }
                     
-                    list($itemsTemplate,$itemTemplate) = def_module::loadTemplates(
+                    list($itemsTemplate,$itemTemplate, $activeItemTemplate) = def_module::loadTemplates(
                             'catalog/' . $template,
                             'category_block',
-                            'category_block_line'
+                            'category_block_line',
+                            'category_block_line_active'
                     );
                     
                     $items = array();
@@ -199,17 +200,22 @@
                         $pageId = $page->getId();
 
                         $categoryName = $hierarchy->getElement($pageId)->getName();
-                        $categryPath = $hierarchy->getPathById($pageId);
+                        $categoryPath = $hierarchy->getPathById($pageId);
 
                         $item = array();
 
                         $item['attribute:id'] = $pageId;
                         $item['attribute:link'] = $hierarchy->getPathById($pageId);
                         $item['attribute:categry_name'] = $categoryName;
-                        $item['attribute:category_link'] = $categryPath;
+                        $item['attribute:category_link'] = $categoryPath;
                         $item['xlink:href'] ='upage://' . $pageId;
                         $item['node:text'] = $page->getName();
-                        $items[] = def_module::parseTemplate($itemTemplate, $item, $pageId);
+                        
+                        if($pageId == $elementId){
+                            $items[] = def_module::parseTemplate($activeItemTemplate, $item, $pageId);
+                        }else{
+                            $items[] = def_module::parseTemplate($itemTemplate, $item, $pageId);   
+                        }
                     }
 
                     $block_arr['subnodes:lines'] = $items;

@@ -16,4 +16,10 @@ $FORMS['category_block_line'] = <<<END
 </li>
 END;
 
+$FORMS['category_block_line_active'] = <<<END
+<li class="subsection-filter__item">
+    <a href="%category_link%" class="subsection-filter__link active">%categry_name%</a>
+</li>
+END;
+
 ?>
